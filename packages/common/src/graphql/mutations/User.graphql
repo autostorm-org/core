@@ -1,0 +1,18 @@
+# User Mutations
+mutation createUser($data: UserCreateInput!) {
+  createUser(data: $data) {
+    ...RegularUser
+  }
+}
+
+mutation updateUser($data: UserUpdateInput!, $where: UserWhereUniqueInput!) {
+  updateUser(data: $data, where: $where) {
+    ...RegularUser
+  }
+}
+
+mutation deleteUser($where: UserWhereUniqueInput!) {
+  deleteUser(where: $where) {
+    ...RegularUser
+  }
+}

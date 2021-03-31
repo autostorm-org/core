@@ -1,0 +1,11 @@
+query CarModel($where: CarModelWhereUniqueInput!) {
+  carModel(where: $where) {
+    ...RegularCarModel
+  }
+}
+
+query CarModels {
+  carModels {
+    ...RegularCarModel
+  }
+}

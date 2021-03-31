@@ -1,0 +1,4 @@
+fragment RegularCarMake on CarMake {
+  id
+  makeName
+}

@@ -1,0 +1,56 @@
+{
+  "name": "autofica",
+  "version": "1.0.0",
+  "description": "Tools for car dealers/ concessionaries",
+  "main": "index.js",
+  "author": "Carlos Balladares",
+  "license": "Proprietary",
+  "private": true,
+  "devDependencies": {
+    "@types/gulp": "^4.0.7",
+    "expo-yarn-workspaces": "^1.2.1",
+    "gulp": "^4.0.2",
+    "lerna": "^3.20.2",
+    "pm2": "^4.5.0",
+    "prettier": "^2.1.2"
+  },
+  "scripts": {
+    "storybook": "cd packages/indigo-common && yarn storybook",
+    "dev": "pm2 start ecosystem.config.js",
+    "status": "pm2 status",
+    "delete": "pm2 delete all"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "services/*"
+    ],
+    "nohoist": [
+      "**/@nestjs",
+      "**/@nestjs/**",
+      "**/@types/jasmine",
+      "**/@types/jasmine/**",
+      "**/jest/**",
+      "**/jest",
+      "**/@types/jest/**",
+      "**/@types/jest",
+      "**/webpack/**",
+      "**/webpack",
+      "**/@storybook/**",
+      "**/@storybook",
+      "**/prettier/**",
+      "**/prettier",
+      "**/rsmq-promise/**",
+      "**/rsmq-promise",
+      "**/graphql-fields/**",
+      "**/graphql-fields",
+      "**/babel-jest/**",
+      "**/babel-jest",
+      "**/@storybook/cli",
+      "**/@storybook/cli/**"
+    ]
+  },
+  "resolutions": {
+    "graphql": "15.4.0"
+  }
+}

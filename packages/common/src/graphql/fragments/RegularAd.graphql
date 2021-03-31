@@ -1,0 +1,16 @@
+fragment RegularAd on Ad {
+  id
+  status
+  createdAt
+  updatedAt
+  publishedDate
+  creatorStepi
+  title
+  description
+  price
+  transactionType
+  regionId
+  adPlanId
+  userId
+  carId
+}

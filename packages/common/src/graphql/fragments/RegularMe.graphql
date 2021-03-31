@@ -1,0 +1,7 @@
+fragment RegularMe on MeResponse {
+  id
+  email
+  role
+  firstName
+  lastName
+}

@@ -1,0 +1,12 @@
+# AdQuery
+query Ad($where: AdWhereUniqueInput!) {
+  ad(where: $where) {
+    ...RegularAd
+  }
+}
+
+query Ads {
+  ads {
+    ...RegularAd
+  }
+}

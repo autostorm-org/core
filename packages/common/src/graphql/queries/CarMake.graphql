@@ -1,0 +1,11 @@
+query CarMake($where: CarMakeWhereUniqueInput!) {
+  carMake(where: $where) {
+    ...RegularCarMake
+  }
+}
+
+query CarMakes {
+  carMakes {
+    ...RegularCarMake
+  }
+}

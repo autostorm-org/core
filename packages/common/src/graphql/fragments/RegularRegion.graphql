@@ -1,0 +1,4 @@
+fragment RegularRegion on Region {
+  id
+  regionName
+}

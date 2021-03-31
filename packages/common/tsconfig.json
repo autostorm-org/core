@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "jsx": "react",
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "outDir": "lib",
+    "typeRoots": ["./src/@types", "./node_modules/@types"]
+  },
+  "include": ["src"],
+  "baseUrl": ".",
+  "exclude": ["**/*.stories.tsx", "**/*.test.tsx", "**/*.d.ts"]
+}

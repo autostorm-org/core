@@ -1,0 +1,17 @@
+mutation createAd($data: AdCreateInput!) {
+  createAd(data: $data) {
+    ...RegularAd
+  }
+}
+
+mutation updateAd($data: AdUpdateInput!, $where: AdWhereUniqueInput!) {
+  updateAd(data: $data, where: $where) {
+    ...RegularAd
+  }
+}
+
+mutation deleteAd($where: AdWhereUniqueInput!) {
+  deleteAd(where: $where) {
+    ...RegularAd
+  }
+}

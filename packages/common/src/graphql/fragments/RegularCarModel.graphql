@@ -1,0 +1,5 @@
+fragment RegularCarModel on CarModel {
+  id
+  modelName
+  carMakeId
+}

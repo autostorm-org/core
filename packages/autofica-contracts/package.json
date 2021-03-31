@@ -1,0 +1,9 @@
+{
+  "name": "@autofica/contracts",
+  "version": "0.0.1",
+  "description": "Contracts for autofica BSC",
+  "main": "index.js",
+  "author": "carlosballadares",
+  "license": "GPL3",
+  "private": true
+}

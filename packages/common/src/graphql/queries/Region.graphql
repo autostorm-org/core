@@ -1,0 +1,11 @@
+query Region($where: RegionWhereUniqueInput!) {
+  region(where: $where) {
+    ...RegularRegion
+  }
+}
+
+query Regions {
+  regions {
+    ...RegularRegion
+  }
+}
