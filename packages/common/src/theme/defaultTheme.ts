@@ -7,7 +7,16 @@ const palette_internal = {
     lighter: "#87b6fd",
     contrast: "#ffffff",
   },
+
   secondary: {
+    lighter: "#FFC15E",
+    light: "#FFC15E",
+    main: "#FEAD54",
+    dark: "#FF8600",
+    darker: "FF8600",
+    contrast: "#000000",
+  },
+  secondary_temp: {
     main: "#000000",
     dark: "#333333",
     darker: "#1A1A1A",
@@ -16,11 +25,11 @@ const palette_internal = {
     contrast: "#ffffff",
   },
   tertiary: {
-    main: "#007FB8",
-    dark: "#005C85",
-    darker: "#003952",
-    light: "#00A2EB",
-    lighter: "#1FBAFF",
+    main: "#FFDE00",
+    dark: "#D8BC00",
+    darker: "#D8BC00",
+    light: "#FFE850",
+    lighter: "#FFE850",
     contrast: "#ffffff",
   },
   white: {
@@ -40,12 +49,22 @@ const palette_internal = {
     darker: "#CCCCCC",
     contrast: "white",
   },
+
   gray: {
     lighter: "#E6E6E6",
-    light: "#CCCCCC",
-    primary: "#B3B3B3",
-    dark: "#CCCCCC",
+    light: "#E6E6E6",
+    main: "#CCCCCC",
+    dark: "#707070",
     darker: "#B3B3B3",
+  },
+
+  dark: {
+    lighter: "#555E6A",
+    light: "#555E6A",
+    main: "#32373E",
+    dark: "#22272E",
+    darker: "#22272E",
+    contrast: "#D9D9D9",
   },
   accent: {
     salmon: "#EF7674",
@@ -56,7 +75,6 @@ const palette_internal = {
     blue: "#007AB1",
   },
 };
-
 const fonts_internal = {
   main: "PT Sans",
   secondary: "Open Sans",
@@ -91,6 +109,7 @@ const layout = {
     max: Infinity,
   },
 };
+
 function getTheme(palette, fonts) {
   return {
     header: {
@@ -130,6 +149,16 @@ function getTheme(palette, fonts) {
       backgroundColorHover: palette.primary.dark,
       colorFocusOutline: palette.gray.darker,
       color: palette.primary.contrast,
+      disabledBackgroundColor: "",
+      disabledColor: "",
+    },
+    card: {
+      backgroundColor: palette.white.main,
+      borderColor: palette.gray.main,
+    },
+
+    typography: {
+      color: palette.white.contrast,
     },
   };
 }
@@ -141,5 +170,5 @@ const dayTheme = {
   ...getTheme(palette_internal, fonts_internal),
 };
 
-// console.log("dayTheme", dayTheme);
+console.log("dayTheme", dayTheme);
 export default dayTheme;

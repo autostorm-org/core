@@ -16,10 +16,16 @@
     "jsx": "react",
     "emitDecoratorMetadata": true,
     "sourceMap": true,
-    "outDir": "lib",
-    "typeRoots": ["./src/@types", "./node_modules/@types"]
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "outDir": "./lib"
   },
   "include": ["src"],
   "baseUrl": ".",
-  "exclude": ["**/*.stories.tsx", "**/*.test.tsx", "**/*.d.ts"]
+  "exclude": [
+    "**/*.stories.tsx",
+    "**/*.test.tsx",
+    "**/*.d.ts",
+    "**/storybook.tsx"
+  ]
 }

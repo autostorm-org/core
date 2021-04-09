@@ -25,7 +25,7 @@ function Typography(props: TypeTypographyProps) {
   const styles = useStyles();
   const className = styles[props.variant];
   return (
-    <span className={className} style={props.override}>
+    <span className={className} style={props.style}>
       {props.children}
     </span>
   );

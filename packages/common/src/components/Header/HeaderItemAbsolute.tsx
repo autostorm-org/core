@@ -26,7 +26,7 @@ const defaultProps: HeaderItemAbsoluteProps = {
 };
 
 function HeaderItemAbsolute(props: HeaderItemAbsoluteProps) {
-  const styles = useStyles(props);
+  const styles = useStyles();
   return (
     <li className={styles.root}>
       <a

@@ -3,9 +3,14 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
 const TsDeclarationWebpackPlugin = require("ts-declaration-webpack-plugin");
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const nodeExternals = require("webpack-node-externals");
 module.exports = {
-  entry: { bundle: "./src/index.ts" },
+  entry: {
+    index: "./src/index.ts",
+    "components/Button/index": "./src/components/Button/index.ts",
+    "components/Themeing/index": "./src/components/Themeing/index.ts",
+  },
   module: {
     rules: [
       {
@@ -16,7 +21,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "css-modules-typescript-loader",
+          { loader: "style-loader" },
           {
             loader: "css-loader",
             options: {
@@ -38,10 +43,13 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    path: path.resolve("./dist"),
+    path: path.resolve("./lib"),
     filename: "[name].js",
-    libraryTarget: "umd",
-    globalObject: "this",
+    library: {
+      name: "MyLibrary",
+
+      type: "umd",
+    }, // name is a placeholder here
   },
   devtool: "source-map",
   target: "web",
@@ -52,9 +60,13 @@ module.exports = {
     //     window: {},
     //   },
     // }),
-    new TsDeclarationWebpackPlugin({
-      name: "bundle.d.ts", // Not required, '[name].d.ts' by default (to match output fileName)
-    }),
+    // new TsDeclarationWebpackPlugin({
+    //   name: "index.d.ts", // Not required, '[name].d.ts' by default (to match output fileName)
+    // }),
+    new MiniCssExtractPlugin({}),
   ],
-  mode: "production",
+  mode: "development",
+  optimization: {
+    usedExports: true,
+  },
 };

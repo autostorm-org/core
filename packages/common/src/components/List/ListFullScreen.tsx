@@ -23,7 +23,7 @@ type ListFullScreenProps = {
 };
 
 function ListFullScreen(props: ListFullScreenProps) {
-  const styles = useStyles(props);
+  const styles = useStyles();
   return (
     <div className={styles.root} style={props.overrides}>
       {props.children}

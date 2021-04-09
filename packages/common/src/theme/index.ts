@@ -1,6 +1,7 @@
 import React from "react";
 import { createUseStyles as internalCUS, createTheming } from "react-jss";
 import defaultTheme from "./defaultTheme";
+import nightTheme from "./nightTheme";
 const ThemeContext = React.createContext(defaultTheme);
 
 // Creating a namespaced theming object.
@@ -12,4 +13,4 @@ function createUseStyles(styles) {
   return internalCUS(styles, { theming });
 }
 
-export { theming, createUseStyles, defaultTheme };
+export { theming, createUseStyles, defaultTheme, nightTheme, ThemeContext };

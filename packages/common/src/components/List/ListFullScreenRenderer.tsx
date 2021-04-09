@@ -58,7 +58,7 @@ const defaultProps: ListFullScreenRendererProps = {
 };
 
 function ListFullScreenRenderer(props: ListFullScreenRendererProps) {
-  const styles = useStyles(props);
+  const styles = useStyles();
   return (
     <li className={styles.root}>
       <a href={props.href} className={styles.content}>

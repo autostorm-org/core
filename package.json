@@ -47,7 +47,9 @@
       "**/babel-jest/**",
       "**/babel-jest",
       "**/@storybook/cli",
-      "**/@storybook/cli/**"
+      "**/@storybook/cli/**",
+      "**/typescript-plugin-css-modules",
+      "**/typescript-plugin-css-modules/**"
     ]
   },
   "resolutions": {

@@ -6,7 +6,7 @@ module.exports = {
     "../src/**/*.stories.mdx",
     "../src/components/**/storybook.@(js|jsx|ts|tsx)",
   ],
-  addons: ["@storybook/addon-viewport"],
+  addons: ["@storybook/addon-viewport", "@storybook/addon-knobs"],
   typescript: {
     check: false,
     checkOptions: {},

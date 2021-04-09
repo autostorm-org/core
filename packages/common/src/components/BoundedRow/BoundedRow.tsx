@@ -6,7 +6,8 @@ const useStyles = createUseStyles(function (theme: any) {
     root: {
       margin: "0px auto 0px auto",
       padding: "0px 60px 0px 60px",
-      maxWidth: "960px",
+      maxWidth: "1200px",
+      width: "100%",
       boxSizing: "border-box",
 
       "@media (max-width:425px)": {
@@ -30,7 +31,7 @@ type BoundedRowProps = {
 };
 
 function BoundedRow(props: BoundedRowProps) {
-  const styles = useStyles(props);
+  const styles = useStyles();
   console.log(
     `BoundedRow, ${JSON.stringify(
       props.themeOverrides != null ? props.themeOverrides.root : {}

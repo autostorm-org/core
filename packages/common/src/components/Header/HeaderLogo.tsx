@@ -41,7 +41,7 @@ const defaultProps: HeaderIconProps = {
 };
 
 function HeaderIcon(props: HeaderIconProps) {
-  const styles = useStyles(props);
+  const styles = useStyles();
   return (
     <li className={styles.root} style={props.overrides}>
       <a href="/" role="menuitem">

@@ -23,7 +23,7 @@ const useStyles = createUseStyles(function (theme) {
 type HeaderProps = { children: any; submenu?: any };
 
 export default function ProductBarDesktop(props: HeaderProps) {
-  const styles = useStyles(props);
+  const styles = useStyles();
   return (
     <nav className={styles.root} aria-label="Autofica">
       <BoundedRow>

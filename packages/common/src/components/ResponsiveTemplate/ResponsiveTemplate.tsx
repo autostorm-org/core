@@ -1,6 +1,5 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { Context as ResponsiveContext } from "react-responsive";
 import { createUseStyles } from "../../theme";
 
 import { theming } from "../../theme";

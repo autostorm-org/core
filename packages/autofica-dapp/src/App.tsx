@@ -1,14 +1,25 @@
 import React from "react";
-import logo from "./logo.svg";
-import Header from "./components/Header";
-import HeaderBanner from "./components/HeaderBanner";
-import "./App.css";
-import { ROLES_ENUM, createUseStyles } from "@autofica/common";
-import { Home } from "./pages/home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import { Button } from "@autofica/common/lib/components/Button";
+import { ThemeProvider } from "@autofica/common/lib/components/Themeing";
 
 function App() {
-  return <Home />;
+  console.log(React);
+  console.log("s");
+
+  return (
+    <ThemeProvider>
+      <div>
+        <Button>Hello</Button>
+        <Button>Hello</Button>
+        <Button>Hello</Button>
+        <Button>Hello</Button>
+        <Button>Hello</Button>
+        <Button>Hello</Button>
+        <Button>Hello</Button>
+      </div>
+    </ThemeProvider>
+  );
 }
 
 export default App;

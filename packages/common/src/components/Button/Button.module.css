@@ -1,0 +1,33 @@
+.root {
+  background-color: var(--button-background-color, #012169);
+  color: var(--button-color, #ffffff);
+  padding: 14px 16px 14px 16px;
+  border: none;
+  border-radius: 4px;
+  text-align: left;
+  font: normal normal bold 14px/22px var(--button-font-family, "Open Sans");
+  font-weight: var(--button-font-weight, 700);
+  letter-spacing: 0px;
+  opacity: 1;
+  transition: 0.4s;
+  line-height: 19px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hover style style */
+.root:hover {
+  background-color: var(--button-background-color-hover, #001034);
+}
+
+/* Active style */
+.root:active {
+  background-color: var(--button-background-color-hover, #001034);
+}
+
+/* Focus style */
+.root:focus,
+.root:focus-within {
+  box-shadow: 0 0 0 0.2rem var(--button-box-shadow-color, #b3b3b3);
+  outline: none;
+}

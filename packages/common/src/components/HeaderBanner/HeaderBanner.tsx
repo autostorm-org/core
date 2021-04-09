@@ -1,76 +1,124 @@
 import React from "react";
-import { HeaderBanner, BoundedRow } from "@autofica/common";
-import { createUseStyles } from "@autofica/common";
-import testcargoodcrop from "./testcargoodcrop.png";
+import { Card } from "../Card";
+import { BoundedRow } from "../BoundedRow";
+import { EnumTypographyVariant, Typography } from "../Typography";
+import Button from "../Button";
+import { createUseStyles } from "../../theme";
+import testcargoodcrop from "../../assets/carillustration.svg";
+import ResponsiveTemplate from "../ResponsiveTemplate";
+import { theming } from "../../theme";
+import { useMediaQuery } from "react-responsive";
 
 const useStyles = createUseStyles((theme: any) => ({
   root: {
     backgroundColor: theme.palette.primary.main,
     flexDirection: "row",
-    height: 250,
     alignItems: "flex-end",
     display: "flex",
-    "@media (max-width:680px)": {
-      display: "none",
-    },
+    paddingTop: 68,
+    paddingBottom: 68,
   },
   flexContainer: {
     display: "flex",
     alignItems: "center",
-    width: 800,
-    height: 250,
   },
   headerBannerContainer: {
-    position: "relative",
-    top: 20,
-    width: 450,
-    maxWidth: "50%",
-    zIndex: 51,
-
-    "@media (max-width:768px)": {
-      maxWidth: "45%",
-    },
-
-    "@media (max-width:900px)": {
-      maxWidth: "38%",
-    },
+    maxWidth: 560,
   },
 
   carImage: {
-    // position: "absolute",
     zIndex: 50,
-    right: 0,
-    // transform: "translate(-15%, 0)",
+    display: "flex",
+    flex: 1,
     maxWidth: 400,
-    height: "auto",
-    "@media (max-width:768px)": {
-      // transform: "translate(0, 0)",
-      maxWidth: 380,
-      position: "relative",
-      right: 15,
+  },
+  bannerCardOverride: { padding: "30px" },
+  [`@media (max-width: ${theme.layout.mobile.max}px)`]: {
+    carImage: {
+      display: "none",
+    },
+    root: {
+      paddingTop: 33,
+      paddingBottom: 33,
+    },
+    bannerCardOverride: { padding: "24px 10px" },
+  },
+  [`@media (min-width: ${theme.layout.tablet.min}px) and (max-width:${theme.layout.tablet.max}px)`]: {
+    carImage: {
+      display: "none",
     },
   },
 }));
-// type HeaderBarnnerProps = {};
 
-function HeaderBarnner() {
-  //   const styles = useStyles(props);
+type HeaderBannerPropsType = {
+  title: string;
+  description: string;
+  ctaDescription: string;
+  onClick?: () => void;
+  disabled?: boolean;
+};
+
+function HeaderBanner(props: HeaderBannerPropsType) {
+  const theme = theming.useTheme();
   const styles = useStyles();
+  const isMobile = useMediaQuery({ maxWidth: theme.layout.mobile.max });
+  const isTablet = useMediaQuery({
+    maxWidth: theme.layout.tablet.max,
+    minWidth: theme.layout.tablet.min,
+  });
 
   return (
     <div className={styles.root}>
       <BoundedRow>
-        <div className={styles.flexContainer}>
-          <div className={styles.headerBannerContainer}>
-            <HeaderBanner
-              bannerText={"Buy your next car with cryptocurrency."}
-            />
-          </div>
+        {isMobile || isTablet ? (
+          <Card override={styles.bannerCardOverride}>
+            <Typography variant={EnumTypographyVariant.h3}>
+              Crypto car loan finder
+            </Typography>
+            <br />
+            <Typography variant={EnumTypographyVariant.p}>
+              Get a collateralized loan for your next car purchase. Chose your
+              backing assets. Powered by Multiplier.{" "}
+            </Typography>
+            <br />
+            <Button onClick={() => {}} overrides={{ marginTop: 9 }}>
+              Call to action
+            </Button>
+          </Card>
+        ) : (
+          <>
+            <div className={styles.flexContainer}>
+              <div style={{ display: "flex", flex: 1, marginRight: 20 }}>
+                <div className={styles.headerBannerContainer}>
+                  <Card override={styles.bannerCardOverride}>
+                    <Typography variant={EnumTypographyVariant.h1}>
+                      Crypto car loan finder
+                    </Typography>
+                    <br />
+                    <Typography variant={EnumTypographyVariant.p}>
+                      Get a collateralized loan for your next car purchase.
+                      Chose your backing assets. Powered by Multiplier.{" "}
+                    </Typography>
+                    <br />
+                    <Button onClick={() => {}} overrides={{ marginTop: 10 }}>
+                      Call to action
+                    </Button>
+                  </Card>
+                </div>
+              </div>
 
-          <img alt={"Car"} src={testcargoodcrop} className={styles.carImage} />
-        </div>
+              <div className={styles.carImage}>
+                <img
+                  alt={"Car"}
+                  src={testcargoodcrop}
+                  style={{ width: "100%" }}
+                />
+              </div>
+            </div>
+          </>
+        )}
       </BoundedRow>
     </div>
   );
 }
-export default HeaderBarnner;
+export default HeaderBanner;
