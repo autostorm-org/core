@@ -14,10 +14,10 @@ export default {
 };
 
 const ResponsiveStory = () => {
-  const btn = React.useMemo(() => <Button>Hello</Button>, []);
-
   const isDayMode = boolean("DAY MODE", true);
   const themeing = useTheme();
+
+  console.log(themeing);
 
   React.useEffect(() => {
     if (isDayMode) {
@@ -33,7 +33,7 @@ const ResponsiveStory = () => {
     }
   }, [isDayMode]);
 
-  return <>{btn}</>;
+  return <Button>Hello</Button>;
 };
 
-export const FirstStory = React.memo(ResponsiveStory).bind({});
+export const FirstStory = ResponsiveStory.bind({});
