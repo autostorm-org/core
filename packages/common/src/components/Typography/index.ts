@@ -1,6 +1,2 @@
-export {
-  EnumTypographyVariant,
-  TypeTypographyProps,
-  default as Typography,
-} from "./Typography";
-export { default } from "./Typography";
+export { Typography, EnumTypographyVariant } from "./Typography";
+export type { TypeTypographyProps } from "./Typography";

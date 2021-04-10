@@ -46,10 +46,10 @@ function HeaderItem(props) {
   const classes = useStyles(props);
   const { dropDown, Submenu, caret, noHover } = props;
   const [isOpen, setOpen] = useState(false);
-  const node = useRef(null);
+  const node = useRef<HTMLLIElement | null>(null);
   const cb = useCallback(
     function handler(e) {
-      if (node.current && node.current.contains(e.target)) {
+      if (node.current != null && node.current.contains(e.target)) {
         if (node.current === e.target) setOpen(!isOpen);
         return;
       }

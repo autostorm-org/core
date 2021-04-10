@@ -30,5 +30,5 @@ function Typography(props: TypeTypographyProps) {
     </span>
   );
 }
-export default Typography;
-export { EnumTypographyVariant, TypeTypographyProps };
+export { Typography, EnumTypographyVariant };
+export type { TypeTypographyProps };

@@ -13,4 +13,5 @@ function Card(props: CardPropsType) {
   );
 }
 export default Card;
-export { Card, CardPropsType };
+export { Card };
+export type { CardPropsType };

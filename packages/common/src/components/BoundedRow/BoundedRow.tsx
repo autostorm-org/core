@@ -47,4 +47,5 @@ function BoundedRow(props: BoundedRowProps) {
   );
 }
 export default BoundedRow;
-export { BoundedRow, BoundedRowProps };
+export { BoundedRow };
+export type { BoundedRowProps };

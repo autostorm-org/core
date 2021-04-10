@@ -23,4 +23,6 @@ const Button = React.memo((props: React.PropsWithChildren<ButtonProps>) => {
 });
 
 export default React.memo(Button);
-export { Button, ButtonProps };
+export { Button };
+
+export type { ButtonProps };

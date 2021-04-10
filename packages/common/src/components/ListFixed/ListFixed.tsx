@@ -83,8 +83,11 @@ const useStyles = createUseStyles(function (theme) {
 function ListFixed(props) {
   const classes = useStyles(props);
   const { sections } = props;
-  const root = useRef(null);
+  const root = useRef<HTMLDivElement | null>(null);
   useEffect(function () {
+    if (root.current == null) {
+      return;
+    }
     let observer = new IntersectionObserver(function (data: any) {
       // console.log(data);
       if (data.length) {

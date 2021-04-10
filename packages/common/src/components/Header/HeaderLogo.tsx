@@ -58,4 +58,5 @@ function HeaderIcon(props: HeaderIconProps) {
 
 HeaderIcon.defaultProps = defaultProps;
 export default HeaderIcon;
-export { HeaderIcon, HeaderIconProps };
+export { HeaderIcon };
+export type { HeaderIconProps };

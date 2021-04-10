@@ -44,4 +44,6 @@ function HeaderItemAbsolute(props: HeaderItemAbsoluteProps) {
 
 HeaderItemAbsolute.defaultProps = defaultProps;
 export default HeaderItemAbsolute;
-export { HeaderItemAbsolute, HeaderItemAbsoluteProps };
+export { HeaderItemAbsolute };
+
+export type { HeaderItemAbsoluteProps };
