@@ -1,18 +1,21 @@
 import React from "react";
-import { StaticTheme } from "./types";
-
-const initialContext: {
-  theme?: StaticTheme;
-  setTheme: (_theme: StaticTheme) => void;
-} = {
-  theme: null,
-  setTheme: (_theme: StaticTheme) => {},
-};
+import type { StaticTheme } from "./types";
 
 /**
- * The Context that provides the current static theme.
+ * Static Theme Context Inteface
  */
-const StaticThemeContext = React.createContext(initialContext);
+interface IStaticThemeContext {
+  theme: StaticTheme | null;
+  setTheme: (_theme: StaticTheme) => void;
+}
+
+/**
+ * The React Static Theme Context that provides the current static theme.
+ */
+const StaticThemeContext = React.createContext<IStaticThemeContext>({
+  theme: null,
+  setTheme: (_theme: StaticTheme) => {},
+});
 
 type StaticThemeProviderProps = React.PropsWithChildren<{
   initialTheme?: StaticTheme;
@@ -24,8 +27,8 @@ type StaticThemeProviderProps = React.PropsWithChildren<{
  * @returns The Static themeing Provider component
  */
 const StaticThemeProvider = (props: StaticThemeProviderProps) => {
-  const [theme, setTheme] = React.useState<StaticTheme>(
-    props.initialTheme || initialContext.theme
+  const [theme, setTheme] = React.useState<StaticTheme | null>(
+    props.initialTheme || null
   );
   const previousTheme = React.useRef<StaticTheme | null>(null);
 
@@ -34,9 +37,11 @@ const StaticThemeProvider = (props: StaticThemeProviderProps) => {
     if (previousTheme.current != null) {
       document.body.classList.remove(previousTheme.current.name);
     }
-    document.head.classList.add(theme.name);
+    if (theme != null) {
+      document.head.classList.add(theme.name);
+    }
     previousTheme.current = theme;
-  }, [theme.name]);
+  }, [theme]);
 
   return (
     <StaticThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
@@ -49,9 +54,10 @@ const StaticThemeProvider = (props: StaticThemeProviderProps) => {
  * React hook to use the current static theme value.
  * @returns The themeing context.
  */
-const useStaticTheme = () => {
+const useStaticThemeContext = () => {
   const theme = React.useContext(StaticThemeContext);
   return theme;
 };
 
-export { StaticThemeProvider, useStaticTheme, StaticThemeContext };
+export { StaticThemeProvider, useStaticThemeContext, StaticThemeContext };
+export type { IStaticThemeContext };
