@@ -20,14 +20,10 @@
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "strictNullChecks": true,
     "isolatedModules": true,
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "noUnusedLocals": true
   },
   "include": ["src"],
   "baseUrl": ".",
-  "exclude": [
-    "**/*.stories.tsx",
-    "**/*.test.tsx",
-    "**/*.d.ts",
-    "**/storybook.tsx"
-  ]
+  "exclude": ["**/*.stories.tsx", "**/*.test.tsx", "**/*.d.ts"]
 }

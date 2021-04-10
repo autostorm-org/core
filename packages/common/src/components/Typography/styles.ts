@@ -2,9 +2,6 @@ import { createUseStyles } from "../../theme";
 
 const useStyles = createUseStyles(function (theme: any) {
   return {
-    root: {
-      color: theme.palette.primary.main,
-    },
     h1: {
       textAlign: "left",
       font: "normal normal bold 48px/62px PT Sans",

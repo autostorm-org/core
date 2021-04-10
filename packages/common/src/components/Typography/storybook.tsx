@@ -1,5 +1,5 @@
 import React from "react";
-import Typography, { EnumTypographyVariant } from "./Typography";
+import { Typography, EnumTypographyVariant } from "./Typography";
 // This default export determines where you story goes in the story list
 export default {
   title: "Typography",

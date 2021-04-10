@@ -41,7 +41,7 @@ const StaticThemeProvider = (props: StaticThemeProviderProps) => {
       document.body.classList.add(theme.name);
     }
     previousTheme.current = theme;
-  }, [theme]);
+  }, [theme && theme.name]);
 
   return (
     <StaticThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>

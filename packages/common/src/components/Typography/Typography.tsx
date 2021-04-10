@@ -1,9 +1,10 @@
 // React
 import React from "react";
-// Styles
-import useStyles from "./styles";
 // type import
 import { WithStyleOverride } from "../../types";
+
+// Styles
+import styles from "./Typography.module.css";
 
 enum EnumTypographyVariant {
   h1 = "h1",
@@ -22,7 +23,6 @@ type TypeTypographyProps = WithStyleOverride<{
 }>;
 
 function Typography(props: TypeTypographyProps) {
-  const styles = useStyles();
   const className = styles[props.variant];
   return (
     <span className={className} style={props.style}>
