@@ -2,24 +2,28 @@ import React from "react";
 import "@autofica/common/lib/index.css";
 import { Button } from "@autofica/common/lib/components/Button";
 import {
-  ThemeProvider,
-  useTheme,
+  StaticThemeProvider,
+  useStaticThemeContext,
 } from "@autofica/common/lib/components/Themeing";
 
 const ThemeChanger = () => {
-  const themer = useTheme();
+  const themer = useStaticThemeContext();
 
-  console.log(themer.theme.name);
   const toggle = () => {
+    if (themer.theme == null) {
+      themer.setTheme({
+        name: "theme1",
+      });
+      return;
+    }
+
     if (themer.theme.name == "empty") {
       themer.setTheme({
-        name: "non",
-        values: { "--button-background-color": "red" },
+        name: "theme1",
       });
     } else {
       themer.setTheme({
-        name: "empty",
-        values: { "--button-background-color": "green" },
+        name: "theme2",
       });
     }
   };
@@ -27,11 +31,8 @@ const ThemeChanger = () => {
 };
 
 function App() {
-  console.log(React);
-  console.log("s");
-
   return (
-    <ThemeProvider>
+    <StaticThemeProvider>
       <div>
         <ThemeChanger />
         <Button>Hello</Button>
@@ -41,7 +42,7 @@ function App() {
         <Button>Hello</Button>
         <Button>Hello</Button>
       </div>
-    </ThemeProvider>
+    </StaticThemeProvider>
   );
 }
 

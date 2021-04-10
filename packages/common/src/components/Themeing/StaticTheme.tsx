@@ -38,7 +38,7 @@ const StaticThemeProvider = (props: StaticThemeProviderProps) => {
       document.body.classList.remove(previousTheme.current.name);
     }
     if (theme != null) {
-      document.head.classList.add(theme.name);
+      document.body.classList.add(theme.name);
     }
     previousTheme.current = theme;
   }, [theme]);

@@ -1,5 +1,4 @@
 import React from "react";
-// import useStyles from "./styles";
 import styles from "./Button.module.css";
 type ButtonProps = {
   onClick?: () => void;
@@ -8,8 +7,7 @@ type ButtonProps = {
   disabled?: boolean;
 };
 
-const Button = React.memo((props: React.PropsWithChildren<ButtonProps>) => {
-  console.log("render");
+const Button = (props: React.PropsWithChildren<ButtonProps>) => {
   return (
     <button
       className={styles.root}
@@ -20,7 +18,7 @@ const Button = React.memo((props: React.PropsWithChildren<ButtonProps>) => {
       {props.children}
     </button>
   );
-});
+};
 
 export default React.memo(Button);
 export { Button };
