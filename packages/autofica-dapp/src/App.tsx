@@ -6,25 +6,25 @@ import {
   useTheme,
 } from "@autofica/common/lib/components/Themeing";
 
-// const ThemeChanger = () => {
-//   const themer = useTheme();
+const ThemeChanger = () => {
+  const themer = useTheme();
 
-//   console.log(themer.theme.name);
-//   const toggle = () => {
-//     if (themer.theme.name == "empty") {
-//       themer.setTheme({
-//         name: "non",
-//         values: { "--button-background-color": "red" },
-//       });
-//     } else {
-//       themer.setTheme({
-//         name: "empty",
-//         values: { "--button-background-color": "green" },
-//       });
-//     }
-//   };
-//   return <Button onClick={toggle}>Toggle</Button>;
-// };
+  console.log(themer.theme.name);
+  const toggle = () => {
+    if (themer.theme.name == "empty") {
+      themer.setTheme({
+        name: "non",
+        values: { "--button-background-color": "red" },
+      });
+    } else {
+      themer.setTheme({
+        name: "empty",
+        values: { "--button-background-color": "green" },
+      });
+    }
+  };
+  return <Button onClick={toggle}>Toggle</Button>;
+};
 
 function App() {
   console.log(React);
@@ -33,7 +33,7 @@ function App() {
   return (
     <ThemeProvider>
       <div>
-        <Button>Hello</Button>
+        <ThemeChanger />
         <Button>Hello</Button>
         <Button>Hello</Button>
         <Button>Hello</Button>

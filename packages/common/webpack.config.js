@@ -6,11 +6,13 @@ const TsDeclarationWebpackPlugin = require("ts-declaration-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require("webpack-node-externals");
 module.exports = {
+  // Entry points to the library
   entry: {
     index: "./src/index.ts",
     "components/Button/index": "./src/components/Button/index.ts",
     "components/Themeing/index": "./src/components/Themeing/index.ts",
   },
+  // Rules for library file types
   module: {
     rules: [
       {
@@ -46,11 +48,11 @@ module.exports = {
     path: path.resolve("./lib"),
     filename: "[name].js",
     library: {
-      name: "MyLibrary",
-
+      name: "@autofica/common",
       type: "umd",
-    }, // name is a placeholder here
+    },
   },
+  // Devtool
   devtool: "source-map",
   target: "web",
   plugins: [
@@ -69,6 +71,7 @@ module.exports = {
   optimization: {
     usedExports: true,
   },
+  // Peer dependencies
   externals: {
     react: "react",
   },

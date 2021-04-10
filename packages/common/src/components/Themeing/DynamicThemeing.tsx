@@ -1,5 +1,5 @@
 import React from "react";
-
+import { themeingClassName } from "./constants";
 type Theme = { name: string; values: { [key: string]: string } };
 
 const defaultTheme: Theme = {
@@ -13,8 +13,6 @@ const theme: { theme: Theme; setTheme: (_theme: Theme) => void } = {
 };
 const ThemeContext = React.createContext(theme);
 
-const themeingClass = "__AUTOFICA_THEME";
-
 const themeToStyles = (theme: Theme): string => {
   const styles = Object.entries(theme.values).reduce(
     (acc: string, next: [string, string]) => {
@@ -23,7 +21,7 @@ const themeToStyles = (theme: Theme): string => {
     ""
   );
   return `
-    .${themeingClass}{
+    .${themeingClassName}{
         /** Theme: ${theme.name} **/
       ${styles}
     }
@@ -39,10 +37,10 @@ const ThemeProvider = (props: React.PropsWithChildren<{}>) => {
   /* Initializes themeing */
   React.useEffect(() => {
     document.head.appendChild(styleNodeRef.current);
-    document.body.classList.add(themeingClass);
+    document.body.classList.add(themeingClassName);
     return () => {
       document.head.removeChild(styleNodeRef.current);
-      document.body.classList.remove(themeingClass);
+      document.body.classList.remove(themeingClassName);
     };
   }, []);
 
