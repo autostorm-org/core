@@ -21,7 +21,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: "style-loader" },
+          { loader: MiniCssExtractPlugin.loader },
           {
             loader: "css-loader",
             options: {
@@ -68,5 +68,8 @@ module.exports = {
   mode: "development",
   optimization: {
     usedExports: true,
+  },
+  externals: {
+    react: "react",
   },
 };

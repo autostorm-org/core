@@ -9,6 +9,7 @@ type ButtonProps = {
 };
 
 const Button = React.memo((props: React.PropsWithChildren<ButtonProps>) => {
+  console.log("render");
   return (
     <button
       className={styles.root}
@@ -21,5 +22,5 @@ const Button = React.memo((props: React.PropsWithChildren<ButtonProps>) => {
   );
 });
 
-export default Button;
+export default React.memo(Button);
 export { Button, ButtonProps };
