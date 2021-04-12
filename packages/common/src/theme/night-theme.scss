@@ -13,6 +13,12 @@
   /* Card */
   --card-background-color: var(--dark-main);
   --card-border-color: var(--gray-main);
+
   /* Header Banner */
-  --header-banner-background-color: var(--primary-main);
+  --header-banner-background-color: var(--dark-dark);
+
+  /* Header */
+  --header-background-color: var(--dark-main);
+  --header-color: var(--header-contrast);
+  --header-height-dektop: 66px;
 }

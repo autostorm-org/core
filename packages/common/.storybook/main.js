@@ -38,6 +38,39 @@ module.exports = {
       ],
     });
 
+    config.module.rules.push({
+      test: /\.scss$/,
+      exclude: /.*theme\.scss$/,
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            modules: true,
+          },
+        },
+
+        "sass-loader",
+      ],
+      include: path.resolve(__dirname, "../"),
+    });
+
+    config.module.rules.push({
+      test: /.*theme\.scss$/,
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            modules: false,
+          },
+        },
+
+        "sass-loader",
+      ],
+      include: path.resolve(__dirname, "../"),
+    });
+
     // Return the altered config
     return config;
   },

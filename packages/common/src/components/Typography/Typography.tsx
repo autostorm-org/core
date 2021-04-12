@@ -1,8 +1,7 @@
 // React
 import React from "react";
 // type import
-import { WithStyleOverride } from "../../types";
-
+import { WithOverrides } from "../../types";
 // Styles
 import styles from "./Typography.module.css";
 
@@ -17,15 +16,17 @@ enum EnumTypographyVariant {
   link = "link",
 }
 
-type TypeTypographyProps = WithStyleOverride<{
-  children?: React.ReactNode;
-  variant: EnumTypographyVariant;
-}>;
+type TypeTypographyProps = WithOverrides<
+  React.PropsWithChildren<{
+    variant: EnumTypographyVariant;
+  }>
+>;
 
 function Typography(props: TypeTypographyProps) {
   const className = styles[props.variant];
+  const overrideClassName = props.override || "";
   return (
-    <span className={className} style={props.style}>
+    <span className={`${className} ${overrideClassName}`} style={props.style}>
       {props.children}
     </span>
   );

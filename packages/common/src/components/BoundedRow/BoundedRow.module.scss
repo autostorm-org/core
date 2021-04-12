@@ -1,0 +1,19 @@
+@import "../../theme/constants.scss";
+.root {
+  margin: 0px auto 0px auto;
+  padding: 0px 60px 0px 60px;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  @media (max-width: $layout-mobile-lg-max) {
+    padding: 0px 20px 0px 20px;
+  }
+
+  @media (max-width: $layout-mobile-sm-max) {
+    padding: 0px 5px 0px 5px;
+  }
+}
+
+.fullWidthRoot {
+  width: 100%;
+}

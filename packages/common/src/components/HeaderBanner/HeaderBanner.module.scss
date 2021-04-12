@@ -1,0 +1,75 @@
+@import "../../theme/constants.scss";
+.root {
+  background-color: var(--header-banner-background-color);
+  flex-direction: row;
+  align-items: flex-end;
+  display: flex;
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerBannerContainer {
+  max-width: 560px;
+}
+.headerBannerCardWrapper {
+  display: flex;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.carImage {
+  z-index: 50;
+  display: flex;
+  flex: 1;
+  max-width: 400px;
+}
+
+.bannerCardOverride {
+  padding: 30px;
+}
+
+.buttonOverride {
+  margin-top: 10px;
+}
+.headerBannerImage {
+  width: 100%;
+}
+
+@media (max-width: $layout-mobile-lg-max) {
+  .carImage {
+    display: none;
+  }
+  .root {
+    padding-top: 33px;
+    padding-bottom: 33px;
+  }
+  .bannerCardOverride {
+    padding: 10px 24px;
+  }
+
+  .titleOverride {
+    font: normal normal bold 30px/33px "PT Sans";
+  }
+
+  .headerBannerCardWrapper {
+    display: block;
+    flex: 1;
+    margin-right: initial;
+    margin-left: initial;
+  }
+}
+
+@media (min-width: $layout-tablet-min) and (max-width: $layout-tablet-max) {
+  .carImage {
+    display: none;
+  }
+
+  .titleOverride {
+    font: normal normal bold 24px/33px "PT Sans";
+  }
+}

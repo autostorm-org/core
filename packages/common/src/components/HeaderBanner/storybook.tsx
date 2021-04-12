@@ -13,9 +13,11 @@ const CARD_DESCRIPTION =
 const CARD_CTADESCRIPTION = "Find your car loan";
 const Template = (args) => (
   <HeaderBanner
-    title={CARD_TITLE}
-    description={CARD_DESCRIPTION}
-    ctaDescription={CARD_CTADESCRIPTION}
+    cardTitle={CARD_TITLE}
+    cardText={CARD_DESCRIPTION}
+    cardCTA={CARD_CTADESCRIPTION}
+    bannerImageAltText={"Car illustration"}
+    bannerImageSrc={"./carillustration.svg"}
   />
 );
 
