@@ -1,18 +1,21 @@
 import React from "react";
-import styles from "./Button.module.css";
-type ButtonProps = {
-  onClick?: () => void;
-  onHover?: () => void;
-  overrides?: { [key: string]: any };
-  disabled?: boolean;
-};
+import styles from "./Button.module.scss";
+import { WithOverrides } from "../../types";
+type ButtonProps = WithOverrides<
+  React.PropsWithChildren<{
+    onClick?: () => void;
+    onHover?: () => void;
+    disabled?: boolean;
+  }>
+>;
 
-const Button = (props: React.PropsWithChildren<ButtonProps>) => {
+const Button = (props: ButtonProps) => {
+  const override = props.override || "";
   return (
     <button
-      className={styles.root}
+      className={`${styles.root} ${override}`}
       onClick={props.onClick}
-      style={props.overrides}
+      style={props.style}
       disabled={Boolean(props.disabled)}
     >
       {props.children}

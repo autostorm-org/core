@@ -41,6 +41,12 @@ const StaticThemeProvider = (props: StaticThemeProviderProps) => {
       document.body.classList.add(theme.name);
     }
     previousTheme.current = theme;
+
+    return () => {
+      if (theme != null) {
+        document.body.classList.remove(theme.name);
+      }
+    };
   }, [theme && theme.name]);
 
   return (
