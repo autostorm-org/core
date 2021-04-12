@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { EnumTypographyVariant, Typography } from "../Typography";
+import Typography, { EnumTypographyVariant } from "../Typography";
 import Button from "../Button";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { ThemeContext, nightTheme, defaultTheme } from "../../theme";
@@ -23,7 +23,7 @@ const MobileCard = () => {
           contents.
         </Typography>
         <br />
-        <Button onClick={() => {}} style={{ marginTop: 9 }}>
+        <Button onClick={() => {}} overrides={{ marginTop: 9 }}>
           Call to action
         </Button>
       </Card>
@@ -44,7 +44,7 @@ const DesktopCard = () => {
           backing assets. Powered by Multiplier.{" "}
         </Typography>
         <br />
-        <Button onClick={() => {}} style={{ marginTop: 10 }}>
+        <Button onClick={() => {}} overrides={{ marginTop: 10 }}>
           Call to action
         </Button>
       </Card>

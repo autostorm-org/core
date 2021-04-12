@@ -1,10 +1,11 @@
 import React from "react";
-import styles from "./Card.module.scss";
-import { WithOverrides } from "../../types";
+import useStyles from "./styles";
+import { WithChildren, withOverrides } from "../../types";
 
-type CardPropsType = WithOverrides<React.PropsWithChildren<{}>>;
+type CardPropsType = withOverrides<WithChildren<{}>>;
 
 function Card(props: CardPropsType) {
+  const styles = useStyles();
   return (
     <div className={`${styles.root} ${props.override}`} style={props.style}>
       {props.children}
