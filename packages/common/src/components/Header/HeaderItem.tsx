@@ -1,49 +1,20 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { createUseStyles } from "../../theme";
+import styles from "./HeaderItem.module.scss";
+import { WithOverrides } from "../../types";
 
-const useStyles = createUseStyles(function (theme) {
-  return {
-    root: {
-      display: "flex",
-      flexDirection: "column",
-      paddingLeft: "0",
-      marginBottom: "0",
-      listStyle: "none",
-    },
-    content: {
-      font: `${theme.header.fontWeight} ${theme.header.fontSize}/22px ${theme.header.font}`,
-      display: "inline-block",
-      textAlign: "left",
-      letterSpacing: "0",
-      backgroundColor: theme.header.backgroundColor,
-      color: theme.header.color,
-      opacity: "1",
-      whiteSpace: "nowrap",
-      padding: "20px 14px 20px 14px",
+type HeaderItemProps = WithOverrides<
+  React.PropsWithChildren<{
+    dropDown?: boolean;
+    Submenu?: React.JSXElementConstructor<{ sections: any }>;
+    caret?: boolean;
+    noHover?: boolean;
+    anchorElement?: React.JSXElementConstructor<any>;
+    href?: string;
+    sections?: any;
+  }>
+>;
 
-      boxSizing: "border-box",
-      userSelect: "none",
-      transition: "0.3s",
-      textDecoration: "none",
-
-      "&:hover": {
-        backgroundColor: `${theme.header.backgroundColorHover}`,
-        textDecoration: "none",
-      },
-      "&:focus": {
-        outline: `2px dashed ${theme.accessibility.boxColor}`,
-        zIndex: 20,
-      },
-      "&:active": {
-        backgroundColor: theme.header.backgroundColorActive,
-      },
-    },
-    submenu: { padding: 0 },
-  };
-});
-
-function HeaderItem(props) {
-  const classes = useStyles(props);
+const HeaderItem = (props: HeaderItemProps) => {
   const { dropDown, Submenu, caret, noHover } = props;
   const [isOpen, setOpen] = useState(false);
   const node = useRef<HTMLLIElement | null>(null);
@@ -67,10 +38,11 @@ function HeaderItem(props) {
     [isOpen]
   );
   const AnchorElement = props.anchorElement || "a";
+  const overrideClass = props.override || "";
   return (
     <li
       ref={node}
-      className={classes.root}
+      className={`${styles.root} ${overrideClass}`}
       role="none"
       onMouseEnter={function () {
         if (!noHover) setOpen(true);
@@ -82,7 +54,7 @@ function HeaderItem(props) {
         if (noHover) setOpen(true);
       }}
     >
-      <AnchorElement href={props.href} className={`${classes.content}`}>
+      <AnchorElement href={props.href} className={`${styles.content}`}>
         <>
           {props.children}
           {dropDown && caret ? (
@@ -98,7 +70,7 @@ function HeaderItem(props) {
       </AnchorElement>
       {dropDown && isOpen && Submenu ? (
         <>
-          <div className={classes.submenu}>
+          <div className={styles.submenu}>
             {<Submenu sections={props.sections} />}
           </div>
         </>
@@ -107,5 +79,6 @@ function HeaderItem(props) {
       )}
     </li>
   );
-}
+};
 export default HeaderItem;
+export type { HeaderItemProps };

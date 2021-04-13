@@ -2,14 +2,21 @@
 import React from "react";
 // imports
 import { BoundedRow } from "../BoundedRow";
+// type import
+import type { WithClassOverride } from "../../types";
 // styles
 import styles from "./Header.module.scss";
 
-type HeaderProps = { children: any; submenu?: any };
+type HeaderProps = WithClassOverride<
+  React.PropsWithChildren<{
+    submenu?: React.ReactNode;
+  }>
+>;
 
-const ProductBarDesktop = (props: HeaderProps) => {
+const Header = (props: HeaderProps) => {
+  const overrideClass = props.override || "";
   return (
-    <nav className={styles.root} aria-label="Autofica">
+    <nav className={`${styles.root} ${overrideClass}`} aria-label="Autofica">
       <BoundedRow>
         <ul className={styles.menu} role="menu">
           {props.children}
@@ -20,4 +27,5 @@ const ProductBarDesktop = (props: HeaderProps) => {
   );
 };
 
-export default ProductBarDesktop;
+export default Header;
+export type { HeaderProps };
