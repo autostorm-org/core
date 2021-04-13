@@ -1,0 +1,36 @@
+@import "../../theme/constants.scss";
+
+.mobileNavWrapper {
+}
+
+.desktopNavItem {
+  display: none;
+  @media (min-width: $layout-desktop-min) {
+    display: flex;
+  }
+}
+.headerResponsiveLogo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 125px;
+  @media (min-width: $layout-desktop-min) {
+    margin-right: auto;
+    margin-left: 0px;
+  }
+}
+
+.menuReponsiveIcon {
+  @media (min-width: $layout-desktop-min) {
+    display: none;
+  }
+}
+
+.fullScreenMenyReponsive {
+  @media (min-width: $layout-desktop-min) {
+    display: none;
+  }
+}
+
+.hiddenMenu {
+  display: none;
+}

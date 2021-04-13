@@ -1,0 +1,14 @@
+.root {
+  position: absolute;
+  list-style-type: none;
+}
+
+.leftPositionedItem {
+  left: 20px;
+  right: auto;
+}
+
+.rightPositionedItem {
+  right: 20px;
+  left: auto;
+}

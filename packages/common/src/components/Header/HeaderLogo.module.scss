@@ -1,0 +1,21 @@
+.root {
+  height: auto;
+  width: 150px;
+  list-style-type: none;
+}
+
+.leftOrCenterItem {
+  margin-right: auto;
+}
+
+.rightItem {
+  margin-right: 0px;
+}
+
+.rightOrCenterItem {
+  margin-left: auto;
+}
+
+.leftItem {
+  margin-left: 0px;
+}

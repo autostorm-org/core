@@ -1,49 +1,35 @@
 import React from "react";
-import { createUseStyles } from "../../theme";
 import { HeaderLocations } from "./constants";
+import styles from "./HeaderLogo.module.scss";
+import type { WithOverrides } from "../../types";
 
-const useStyles = createUseStyles(function (theme: any) {
-  return {
-    root: {
-      height: "auto",
-      width: "150px",
-      marginRight: ({ itemLocation }: HeaderIconProps) =>
-        itemLocation == HeaderLocations.left ||
-        itemLocation == HeaderLocations.center
-          ? "auto"
-          : "0px",
-      marginLeft: ({ itemLocation }: HeaderIconProps) =>
-        itemLocation == HeaderLocations.right ||
-        itemLocation == HeaderLocations.center
-          ? "auto"
-          : "0px",
-      listStyleType: "none",
-    },
-  };
-});
-
-type HeaderIconProps = {
+type HeaderLogoProps = WithOverrides<{
   logoPath: string;
   alt: string;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   itemLocation: HeaderLocations;
-  overrides?: object;
-};
+}>;
 
-const defaultProps: HeaderIconProps = {
-  logoPath: "",
-  alt: "",
-  width: "auto",
-  height: "auto",
-  itemLocation: HeaderLocations.left,
-  overrides: undefined,
-};
+function HeaderLogo(props: HeaderLogoProps) {
+  const rightMarginClass =
+    props.itemLocation == HeaderLocations.left ||
+    props.itemLocation == HeaderLocations.center
+      ? styles.leftOrCenterItem
+      : styles.rightItem;
+  const leftMarginClass =
+    props.itemLocation == HeaderLocations.right ||
+    props.itemLocation == HeaderLocations.center
+      ? styles.rightOrCenterItem
+      : styles.leftItem;
 
-function HeaderIcon(props: HeaderIconProps) {
-  const styles = useStyles();
+  const overrideClass = props.override || "";
+
   return (
-    <li className={styles.root} style={props.overrides}>
+    <li
+      className={`${styles.root} ${rightMarginClass} ${leftMarginClass}  ${overrideClass}`}
+      style={props.style}
+    >
       <a href="/" role="menuitem">
         <img
           src={props.logoPath}
@@ -56,7 +42,5 @@ function HeaderIcon(props: HeaderIconProps) {
   );
 }
 
-HeaderIcon.defaultProps = defaultProps;
-export default HeaderIcon;
-export { HeaderIcon };
-export type { HeaderIconProps };
+export default HeaderLogo;
+export type { HeaderLogoProps };
