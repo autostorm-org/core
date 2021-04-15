@@ -20,9 +20,19 @@
   /* Header */
   --header-background-color: var(--primary-main);
   --header-color: var(--primary-contrast);
-  --header-height-dektop: 66px;
+  --header-height-desktop: 66px;
 
   --header-item-font-weight: var(--font-weight-bold);
   --header-item-font-family: var(--font-family-main);
   --header-item-font-size: 16px;
+
+  /* ListFullScreen */
+  --list-full-screen-color: #000;
+  --list-full-screen-background-color: white;
+
+  /* ListFullScreenRow */
+  --list-full-screen-row-color: #000;
+  --list-full-screen-row-background-color: inherit;
+  --list-full-screen-row-background-color-hover: var(--gray-light);
+  --list-full-screen-row-background-color-active: var(--gray-light);
 }

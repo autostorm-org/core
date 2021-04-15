@@ -1,2 +1,2 @@
 export { default as ListFullScreen } from "./ListFullScreen";
-export { default as ListFullScreenRenderer } from "./ListFullScreenRenderer";
+export { default as ListFullScreenRow } from "./ListFullScreenRow";

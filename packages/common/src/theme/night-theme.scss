@@ -20,9 +20,19 @@
   /* Header */
   --header-background-color: var(--dark-main);
   --header-color: var(--header-contrast);
-  --header-height-dektop: 66px;
+  --header-height-desktop: 66px;
 
   --header-item-font-weight: var(--font-weight-bold);
   --header-item-font-family: var(--font-family-main);
   --header-item-font-size: 16px;
+
+  /* ListFullScreen*/
+  --list-full-screen-color: var(--dark-contrast);
+  --list-full-screen-background-color: var(--dark-darker);
+
+  /* ListFullScreenRow */
+  --list-full-screen-row-color: var(--dark-contrast);
+  --list-full-screen-row-background-color: var(--dark-darker);
+  --list-full-screen-row-background-color-hover: var(--dark-dark);
+  --list-full-screen-row-background-color-active: var(--dark-dark);
 }

@@ -20,12 +20,12 @@ const useStorybookThemeToggle = () => {
       themeing.setTheme({
         name: "day",
       });
-      document.body.style.backgroundColor = "white";
+      document.body.style.backgroundColor = "#D7D7D7";
     } else {
       themeing.setTheme({
         name: "night",
       });
-      document.body.style.backgroundColor = "var(--dark-darker)";
+      document.body.style.backgroundColor = "black";
     }
   }, [isDayMode]);
 };
