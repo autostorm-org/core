@@ -4,6 +4,7 @@
   background-color: var(--header-background-color, #012169);
   color: var(--header-color);
   width: 100%;
+  transition: 0.3s;
   @media (min-width: $layout-desktop-min) {
     height: var(--header-height-desktop);
   }

@@ -13,8 +13,8 @@ const HeaderResponsiveStory = () => {
   return (
     <HeaderResponsive
       options={[
-        { content: "Loan Manager" },
-        { content: "Whitepaper" },
+        { content: "Loan Manager", href: "#" },
+        { content: "Whitepaper", href: "#" },
         {
           content: (
             <>

@@ -12,6 +12,8 @@ import styles from "./HeaderResponsive.module.scss";
 
 interface IHeaderItem {
   content: React.ReactNode;
+  onClick?: (event: any) => void;
+  href?: string;
 }
 
 type HeaderResponsiveProps = WithClassOverride<{
@@ -32,7 +34,11 @@ function HeaderResponsive(props: HeaderResponsiveProps) {
           }`}
         >
           {props.options.map((option) => {
-            return <ListFullScreenRow>{option.content}</ListFullScreenRow>;
+            return (
+              <ListFullScreenRow onClick={option.onClick} href={option.href}>
+                {option.content}
+              </ListFullScreenRow>
+            );
           })}
         </ListFullScreen>
       }
@@ -47,7 +53,11 @@ function HeaderResponsive(props: HeaderResponsiveProps) {
 
       {props.options.map((option) => {
         return (
-          <HeaderItem override={styles.desktopNavItem}>
+          <HeaderItem
+            override={styles.desktopNavItem}
+            onClick={option.onClick}
+            href={option.href}
+          >
             {option.content}
           </HeaderItem>
         );
