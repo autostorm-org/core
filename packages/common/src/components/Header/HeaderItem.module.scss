@@ -7,6 +7,8 @@
 }
 
 .content {
+  height: var(--header-item-height);
+
   font: var(--header-item-font-weight) var(--header-item-font-size) / 22px
     var(--header-item-font-family);
   display: inline-block;
@@ -26,11 +28,11 @@
     text-decoration: none;
   }
   &:focus {
-    outline: 2px dashed var(--header-item-box-shadow-color);
+    outline: 2px solid var(--header-item-box-shadow-color);
     z-index: 20;
   }
   &:active {
-    background-color: var(--header-item-background-color-active);
+    background-color: var(--header-item-background-color-hover);
   }
 }
 

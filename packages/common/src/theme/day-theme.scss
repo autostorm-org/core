@@ -25,7 +25,11 @@
   --header-item-font-weight: var(--font-weight-bold);
   --header-item-font-family: var(--font-family-main);
   --header-item-font-size: 16px;
-
+  --header-item-color: white;
+  --header-item-background-color: var(--primary-main);
+  --header-item-background-color-hover: var(--primary-dark);
+  --header-item-box-shadow-color: var(--aux-gray-1);
+  --header-item-height: 66px;
   /* ListFullScreen */
   --list-full-screen-color: #000;
   --list-full-screen-background-color: white;

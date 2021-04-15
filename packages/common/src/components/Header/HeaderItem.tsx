@@ -11,6 +11,7 @@ type HeaderItemProps = WithOverrides<
     anchorElement?: React.JSXElementConstructor<any>;
     href?: string;
     sections?: any;
+    onClick?: (a: any) => void;
   }>
 >;
 

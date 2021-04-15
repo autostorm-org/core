@@ -12,6 +12,8 @@ import styles from "./HeaderResponsive.module.scss";
 
 interface IHeaderItem {
   content: React.ReactNode;
+  onClick?: (event: any) => void;
+  href?: string;
 }
 
 type HeaderResponsiveProps = WithClassOverride<{
@@ -20,9 +22,26 @@ type HeaderResponsiveProps = WithClassOverride<{
 
 function HeaderResponsive(props: HeaderResponsiveProps) {
   const [isOpen, setOpen] = React.useState(false);
-  const onToggle = React.useCallback(() => {
-    setOpen(!isOpen);
-  }, [isOpen]);
+  const node = React.useRef<HTMLDivElement | null>(null);
+  const onToggle = React.useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      setOpen(!isOpen);
+    },
+    [isOpen]
+  );
+
+  const func = (e: FocusEvent) => {
+    if (node.current?.contains(e.target as Node) == false) {
+      setOpen(false);
+    }
+  };
+  React.useEffect(() => {
+    document.addEventListener("focusin", func);
+
+    return () => {
+      document.removeEventListener("focusin", func);
+    };
+  });
   return (
     <Header
       submenu={
@@ -30,9 +49,18 @@ function HeaderResponsive(props: HeaderResponsiveProps) {
           override={`${styles.fullScreenMenyReponsive} ${
             isOpen == false ? styles.hiddenMenu : ""
           }`}
+          aria-labeledby="Mobile Menu"
+          role="menu"
+          ref={node}
         >
           {props.options.map((option) => {
-            return <ListFullScreenRow>{option.content}</ListFullScreenRow>;
+            return (
+              <>
+                <ListFullScreenRow onClick={option.onClick} href={option.href}>
+                  {option.content}
+                </ListFullScreenRow>
+              </>
+            );
           })}
         </ListFullScreen>
       }
@@ -47,16 +75,23 @@ function HeaderResponsive(props: HeaderResponsiveProps) {
 
       {props.options.map((option) => {
         return (
-          <HeaderItem override={styles.desktopNavItem}>
+          <HeaderItem
+            override={styles.desktopNavItem}
+            onClick={option.onClick}
+            href={option.href}
+          >
             {option.content}
           </HeaderItem>
         );
       })}
 
       <HeaderItemAbsolute
+        id={"Mobile Menu"}
         itemLocation={HeaderLocations.right}
         override={styles.menuReponsiveIcon}
         onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-label={"Mobile navigation menu toggle"}
       >
         <Menu color="white" />
       </HeaderItemAbsolute>
