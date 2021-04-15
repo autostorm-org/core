@@ -1,6 +1,6 @@
 import React from "react";
 import { BoundedRow } from "../BoundedRow";
-import { EnumTypographyVariant, Typography } from "../Typography";
+import { TypographyVariant_ENUM, Typography } from "../Typography";
 import Button from "../Button";
 import Card from "../Card";
 import styles from "./HeaderBanner.module.scss";
@@ -24,13 +24,13 @@ function HeaderBanner(props: HeaderBannerPropsType) {
             <div className={styles.headerBannerContainer}>
               <Card override={styles.bannerCardOverride}>
                 <Typography
-                  variant={EnumTypographyVariant.h1}
+                  variant={TypographyVariant_ENUM.h1}
                   override={styles.titleOverride}
                 >
                   {props.cardTitle}
                 </Typography>
                 <br />
-                <Typography variant={EnumTypographyVariant.p}>
+                <Typography variant={TypographyVariant_ENUM.p}>
                   {props.cardText}
                 </Typography>
                 <br />

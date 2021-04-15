@@ -4,7 +4,7 @@ import { createUseStyles } from "../../theme";
 
 import { theming } from "../../theme";
 
-const useStyles = createUseStyles((theme) => ({
+const useStyles = createUseStyles((theme: any) => ({
   mobileContainer: {
     display: "none",
   },

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ListFullScreenRow.module.scss";
 type ListFullScreenRowProps = React.PropsWithChildren<{
-  onClick: Function;
-  href: string;
+  onClick?: Function;
+  href?: string;
 }>;
 
 function ListFullScreenRow(props: ListFullScreenRowProps) {

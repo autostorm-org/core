@@ -7,7 +7,7 @@ const ThemeContext = React.createContext(defaultTheme);
 // Creating a namespaced theming object.
 const theming = createTheming<any>(ThemeContext);
 
-function createUseStyles(styles) {
+function createUseStyles(styles: any) {
   // console.log(theming);
 
   return internalCUS(styles, { theming });

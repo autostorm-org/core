@@ -7,7 +7,6 @@ export * from "./components/ResponsiveTemplate";
 
 /**Lists */
 export * from "./components/List";
-export * from "./components/ListFixed";
 
 /**Icon */
 export * from "./components/Icon";
