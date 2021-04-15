@@ -11,7 +11,7 @@ const CARD_DESCRIPTION =
   "Get a collateralized loan for your next car purchase. Chose your backing assets. Powered by Multiplier.";
 
 const CARD_CTADESCRIPTION = "Find your car loan";
-const Template = (args) => (
+const Template = () => (
   <HeaderBanner
     cardTitle={CARD_TITLE}
     cardText={CARD_DESCRIPTION}
@@ -22,7 +22,3 @@ const Template = (args) => (
 );
 
 export const FirstStory = Template.bind({});
-
-FirstStory.args = {
-  /* the args you need here will depend on your component */
-};

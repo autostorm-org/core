@@ -1,7 +1,7 @@
 import React from "react";
 import { createUseStyles } from "../../theme";
 
-const useStyles = createUseStyles(function (theme) {
+const useStyles = createUseStyles(function (theme: any) {
   return {
     root: {
       background: `${theme.input.backgroundColor} 0% 0% no-repeat padding-box`,
@@ -35,7 +35,7 @@ const useStyles = createUseStyles(function (theme) {
   };
 });
 
-function Input(props) {
+function Input(props: any) {
   const classes = useStyles(props);
   return (
     <div className={classes.root} style={props.style}>

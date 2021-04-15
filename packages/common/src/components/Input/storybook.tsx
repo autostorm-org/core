@@ -6,10 +6,6 @@ export default {
   component: Input,
 };
 
-const Template = (args) => <Input />;
+const Template = () => <Input />;
 
 export const FirstStory = Template.bind({});
-
-FirstStory.args = {
-  /* the args you need here will depend on your component */
-};

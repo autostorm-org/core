@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { EnumTypographyVariant, Typography } from "../Typography";
+import { TypographyVariant_ENUM, Typography } from "../Typography";
 import Button from "../Button";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { ThemeContext, nightTheme, defaultTheme } from "../../theme";
@@ -16,9 +16,9 @@ const MobileCard = () => {
   return (
     <div style={{ height: 184, width: 350 }}>
       <Card>
-        <Typography variant={EnumTypographyVariant.h3}>Card title</Typography>
+        <Typography variant={TypographyVariant_ENUM.h3}>Card title</Typography>
         <br />
-        <Typography variant={EnumTypographyVariant.p}>
+        <Typography variant={TypographyVariant_ENUM.p}>
           Card body contents. Card body contents. Card body contents. Card body
           contents.
         </Typography>
@@ -35,11 +35,11 @@ const DesktopCard = () => {
   return (
     <div style={{ height: 240, width: 560 }}>
       <Card style={{ padding: "30px" }}>
-        <Typography variant={EnumTypographyVariant.h1}>
+        <Typography variant={TypographyVariant_ENUM.h1}>
           Crypto car loan finder
         </Typography>
         <br />
-        <Typography variant={EnumTypographyVariant.p}>
+        <Typography variant={TypographyVariant_ENUM.p}>
           Get a collateralized loan for your next car purchase. Chose your
           backing assets. Powered by Multiplier.{" "}
         </Typography>

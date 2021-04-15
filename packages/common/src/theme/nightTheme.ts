@@ -110,7 +110,7 @@ const layout = {
   },
 };
 
-function getTheme(palette, fonts) {
+function getTheme(palette: any, fonts: any) {
   return {
     header: {
       backgroundColor: palette.primary.main,
