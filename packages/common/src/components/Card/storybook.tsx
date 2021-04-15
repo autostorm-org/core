@@ -2,10 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { TypographyVariant_ENUM, Typography } from "../Typography";
 import Button from "../Button";
-import { withKnobs, boolean } from "@storybook/addon-knobs";
-import { ThemeContext, nightTheme, defaultTheme } from "../../theme";
-import ResponsiveTemplate from "../ResponsiveTemplate";
-// This default export determines where you story goes in the story list
+import { withKnobs } from "@storybook/addon-knobs";
 export default {
   title: "Card",
   component: Card,
@@ -52,17 +49,5 @@ const DesktopCard = () => {
   );
 };
 
-const ResponsiveStory = () => {
-  const isDayMode = boolean("DAY MODE", true);
-  return (
-    <ThemeContext.Provider value={isDayMode ? defaultTheme : nightTheme}>
-      <ResponsiveTemplate
-        mobile={MobileCard}
-        desktop={DesktopCard}
-        tablet={DesktopCard}
-      />
-    </ThemeContext.Provider>
-  );
-};
-
-export const FirstStory = ResponsiveStory.bind({});
+export const MobileCardStory = MobileCard.bind({});
+export const DesktopCardStory = DesktopCard.bind({});
