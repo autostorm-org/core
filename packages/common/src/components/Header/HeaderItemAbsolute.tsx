@@ -11,6 +11,9 @@ type HeaderItemAbsoluteProps = WithClassOverride<
   React.PropsWithChildren<{
     itemLocation: HeaderLocations;
     onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    "aria-expanded"?: boolean;
+    "aria-label"?: string;
+    id?: string;
   }>
 >;
 
@@ -25,9 +28,12 @@ const HeaderItemAbsolute = (props: HeaderItemAbsoluteProps) => {
           ? styles.rightPositionedItem
           : ""
       } ${overrideClass}`}
+      aria-label={props["aria-label"]}
+      id={props.id}
     >
       <a
         href="#"
+        aria-expanded={props["aria-expanded"]}
         onClick={function (e) {
           e.preventDefault();
           if (props.onClick != null) {
