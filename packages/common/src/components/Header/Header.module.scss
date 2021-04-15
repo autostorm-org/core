@@ -1,8 +1,12 @@
+@import "../../theme/constants.scss";
+
 .root {
   background-color: var(--header-background-color, #012169);
   color: var(--header-color);
   width: 100%;
-  height: var(--header-height-dektop);
+  @media (min-width: $layout-desktop-min) {
+    height: var(--header-height-desktop);
+  }
 }
 .menu {
   display: flex;

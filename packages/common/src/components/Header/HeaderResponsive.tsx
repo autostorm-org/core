@@ -3,7 +3,7 @@ import Header from "./Header";
 import HeaderLogo from "./HeaderLogo";
 import { HeaderLocations } from "./constants";
 import HeaderItem from "./HeaderItem";
-import { ListFullScreen, ListFullScreenRenderer } from "../List";
+import { ListFullScreen, ListFullScreenRow } from "../List";
 import HeaderItemAbsolute from "./HeaderItemAbsolute";
 import { Menu } from "react-feather";
 
@@ -32,9 +32,7 @@ function HeaderResponsive(props: HeaderResponsiveProps) {
           }`}
         >
           {props.options.map((option) => {
-            return (
-              <ListFullScreenRenderer>{option.content}</ListFullScreenRenderer>
-            );
+            return <ListFullScreenRow>{option.content}</ListFullScreenRow>;
           })}
         </ListFullScreen>
       }

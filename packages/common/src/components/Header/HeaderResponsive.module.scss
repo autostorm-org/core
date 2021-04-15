@@ -1,8 +1,5 @@
 @import "../../theme/constants.scss";
 
-.mobileNavWrapper {
-}
-
 .desktopNavItem {
   display: none;
   @media (min-width: $layout-desktop-min) {
