@@ -1,24 +1,14 @@
 // React
 import React from "react";
+import { TypographyVariant_ENUM } from "./constants";
 // type import
 import { WithOverrides } from "../../types";
 // Styles
-import styles from "./Typography.module.css";
-
-enum EnumTypographyVariant {
-  h1 = "h1",
-  h2 = "h2",
-  h3 = "h3",
-  h4 = "h4",
-  h5 = "h5",
-  h6 = "h6",
-  p = "p",
-  link = "link",
-}
+import styles from "./Typography.module.scss";
 
 type TypeTypographyProps = WithOverrides<
   React.PropsWithChildren<{
-    variant: EnumTypographyVariant;
+    variant: TypographyVariant_ENUM;
   }>
 >;
 
@@ -31,5 +21,5 @@ function Typography(props: TypeTypographyProps) {
     </span>
   );
 }
-export { Typography, EnumTypographyVariant };
+export default Typography;
 export type { TypeTypographyProps };
