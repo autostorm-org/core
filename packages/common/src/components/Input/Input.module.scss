@@ -1,0 +1,68 @@
+/*
+const useStyles = createUseStyles(function (theme: any) {
+  return {
+    root: {
+      background: `${theme.input.backgroundColor} 0% 0% no-repeat padding-box`,
+      border: "1px solid #000000BF",
+      borderRadius: "4px",
+      opacity: "1",
+      display: "flex",
+      width: "100%",
+      padding: "15px",
+      boxSizing: "border-box",
+      alignItems: "center",
+      color: "#000000BF",
+      paddingRight: 24,
+      "&:focus-within": {
+        borderColor: theme.palette.primary.main,
+      },
+    },
+    input: {
+      borderWidth: "0px",
+      border: "none",
+      width: "100%",
+      textAlign: "left",
+      fontSize: theme.input.fontSize,
+      fontWeight: theme.input.fontWeight,
+      fontFamily: theme.input.font,
+      letterSpacing: "0",
+      color: theme.input.color,
+      margin: "0px 12px 0px 12px",
+      "&:focus": { outline: "none" },
+    },
+  };
+});
+
+*/
+
+.root {
+  background: var(--input-background-color) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  opacity: 1;
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  align-items: center;
+  padding-right: 24px;
+  &:focus-within {
+    border-color: var(--input-border-color-focus);
+  }
+}
+
+.input {
+  border-width: 0px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  font-weight: var(--input-font-weight);
+  font-family: var(--input-font-family);
+  letter-spacing: 0;
+  background-color: inherit;
+  color: var(--input-color);
+  &:focus {
+    outline: none;
+  }
+}

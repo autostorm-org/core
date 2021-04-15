@@ -1,52 +1,27 @@
 import React from "react";
-import { createUseStyles } from "../../theme";
+import styles from "./Input.module.scss";
+import type { WithOverrides } from "../../types";
 
-const useStyles = createUseStyles(function (theme: any) {
-  return {
-    root: {
-      background: `${theme.input.backgroundColor} 0% 0% no-repeat padding-box`,
-      border: "1px solid #000000BF",
-      borderRadius: "4px",
-      opacity: "1",
-      display: "flex",
-      width: "100%",
-      padding: "15px",
-      boxSizing: "border-box",
-      alignItems: "center",
-      color: "#000000BF",
-      paddingRight: 24,
-      "&:focus-within": {
-        borderColor: theme.palette.primary.main,
-      },
-    },
-    input: {
-      borderWidth: "0px",
-      border: "none",
-      width: "100%",
-      textAlign: "left",
-      fontSize: theme.input.fontSize,
-      fontWeight: theme.input.fontWeight,
-      fontFamily: theme.input.font,
-      letterSpacing: "0",
-      color: theme.input.color,
-      margin: "0px 12px 0px 12px",
-      "&:focus": { outline: "none" },
-    },
-  };
-});
+type InputProps = WithOverrides<{
+  iconLeft?: React.JSXElementConstructor<{}>;
+  iconRight?: React.JSXElementConstructor<{}>;
+  placeholder?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}>;
 
-function Input(props: any) {
-  const classes = useStyles(props);
+const Input = (props: InputProps) => {
   return (
-    <div className={classes.root} style={props.style}>
+    <div className={styles.root} style={props.style}>
       {props.iconLeft && <props.iconLeft />}
       <input
-        className={classes.input}
+        className={styles.input}
         type="text"
         placeholder={props.placeholder}
+        onChange={props.onChange}
       />
       {props.iconRight && <props.iconRight />}
     </div>
   );
-}
-export default Input;
+};
+export default React.memo(Input);
+export type { InputProps };

@@ -35,4 +35,12 @@
   --list-full-screen-row-background-color: var(--dark-darker);
   --list-full-screen-row-background-color-hover: var(--dark-dark);
   --list-full-screen-row-background-color-active: var(--dark-dark);
+
+  /* Input */
+  --input-background-color: var(--dark-main);
+  --input-border-color: var(--gray-main);
+  --input-border-color-focus: var(--tertiary-main);
+  --input-font-weight: var(--font-weight-medium);
+  --input-font-family: var(--font-family-main);
+  --input-color: var(--dark-contrast);
 }
