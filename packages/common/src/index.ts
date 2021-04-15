@@ -2,9 +2,6 @@
 export * from "./components/Header";
 export * from "./components/HeaderBanner";
 
-/**Responsive Template */
-export * from "./components/ResponsiveTemplate";
-
 /**Lists */
 export * from "./components/List";
 
