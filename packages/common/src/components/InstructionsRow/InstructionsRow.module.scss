@@ -1,0 +1,52 @@
+@import "../../theme/constants.scss";
+.root {
+  background-color: var(--instructions-row-background-color);
+  padding: 40px 0px 40px 0px;
+  @media (min-width: $layout-desktop-min) {
+    padding: 12px 0px 12px 0px;
+  }
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background: var(--instructions-row-circle-background-color) 0% 0% no-repeat
+    padding-box;
+  border: 3px solid var(--instructions-row-circle-border-color);
+  border-radius: 50%;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.circleText {
+  font-weight: var(--instructions-row-circle-font-weight);
+}
+
+.instructionsWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: inherit;
+  width: 100%;
+  align-items: center;
+  flex-flow: row wrap;
+  & > :not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $layout-desktop-min) {
+    & > :not(:last-child) {
+      margin-bottom: auto;
+    }
+  }
+}
+
+.instructionGroup {
+  display: flex;
+  align-items: center;
+}
+.stepText {
+  width: 275px;
+}
