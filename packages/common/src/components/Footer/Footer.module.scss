@@ -1,0 +1,16 @@
+@import "../../theme/constants.scss";
+
+.root {
+  background: var(--footer-background-color) 0% 0% no-repeat padding-box;
+  color: var(--footer-color);
+}
+.footerRowsContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media (min-width: $layout-desktop-min) {
+    flex-direction: row;
+  }
+}

@@ -25,7 +25,7 @@ const useStorybookThemeToggle = () => {
       themeing.setTheme({
         name: "night",
       });
-      document.body.style.backgroundColor = "black";
+      document.body.style.backgroundColor = "#212121";
     }
   }, [isDayMode]);
 };

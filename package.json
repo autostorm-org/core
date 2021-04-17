@@ -15,7 +15,7 @@
     "prettier": "^2.1.2"
   },
   "scripts": {
-    "storybook": "cd packages/indigo-common && yarn storybook",
+    "storybook": "cd packages/common && yarn storybook",
     "dev": "pm2 start ecosystem.config.js",
     "status": "pm2 status",
     "delete": "pm2 delete all"
