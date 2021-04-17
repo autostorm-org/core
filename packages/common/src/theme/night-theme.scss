@@ -58,4 +58,10 @@
 
   /* FooterRowText */
   --footer-row-text-color: #fff;
+
+  /* HomePageRows*/
+  --instructions-row-background-color: var(--dark-main);
+  --instructions-row-circle-border-color: var(--tertiary-main);
+  --instructions-row-circle-background-color: var(--dark-main);
+  --instructions-row-circle-font-weight: var(--font-weight-bold);
 }

@@ -5,6 +5,7 @@ module.exports = {
   stories: [
     "../src/**/*.stories.mdx",
     "../src/components/**/storybook.@(js|jsx|ts|tsx)",
+    "../src/components/**/*.storybook.@(js|jsx|ts|tsx)",
   ],
   addons: ["@storybook/addon-viewport", "@storybook/addon-knobs"],
   typescript: {
