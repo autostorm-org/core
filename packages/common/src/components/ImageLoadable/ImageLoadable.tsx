@@ -1,6 +1,7 @@
 import React from "react";
+import { WithStyleOverride } from "../../types";
 
-type ImageLoadableProps = {
+type ImageLoadableProps = WithStyleOverride<{
   /** Source props*/
   src: string;
   /** Image alt text*/
@@ -10,7 +11,7 @@ type ImageLoadableProps = {
   /** ClassName for image*/
   className?: string;
   loading?: "eager" | "lazy";
-};
+}>;
 /**
  * This component displays `props.loadable` while the image is loaded by the browser.
  * @param props Component props
@@ -32,7 +33,12 @@ const ImageLoadable = (props: ImageLoadableProps) => {
       {props.loader}
     </>
   ) : (
-    <img src={props.src} className={props.className} alt={props.alt} />
+    <img
+      src={props.src}
+      className={props.className}
+      alt={props.alt}
+      style={props.style}
+    />
   );
 };
 export default ImageLoadable;

@@ -1,0 +1,113 @@
+@import "../../theme/constants.scss";
+
+.root {
+  background-color: var(--protocol-row-background-color);
+  overflow: hidden;
+}
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  background-color: inherit;
+  height: 540px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+  @media (min-width: $layout-desktop-min) {
+    grid-template-rows: none;
+    grid-template-columns: 50% 50%;
+    height: 435px;
+  }
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textTitle {
+  width: 300px;
+  margin: 0px;
+  margin-bottom: 10px;
+  @media (min-width: $layout-desktop-min) {
+    width: auto;
+    max-width: 433px;
+  }
+}
+
+.textTitleOverride {
+  color: var(--protocol-row-color);
+
+  @media (min-width: $layout-desktop-min) {
+    font-size: 36px;
+  }
+}
+.textDescription {
+  width: 300px;
+  margin: 0px;
+  margin-bottom: 10px;
+
+  @media (min-width: $layout-desktop-min) {
+    width: auto;
+
+    max-width: 433px;
+  }
+}
+
+.illustrationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.illustration {
+  width: 80%;
+  height: auto;
+  max-width: 250px;
+  -webkit-animation: appear 1s;
+  animation: appear 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  @media (min-width: $layout-desktop-min) {
+    width: 80%;
+    position: relative;
+  }
+}
+
+.logosContainer {
+  width: 300px;
+  margin: 0px;
+
+  @media (min-width: $layout-desktop-min) {
+    width: auto;
+    display: block;
+    width: 433px;
+  }
+}
+.multiplierLogo {
+  background-color: var(--dark-dark);
+  width: 181px;
+  height: auto;
+  padding: 5px;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    left: 500px;
+    opacity: 0;
+  }
+  100% {
+    left: 16px;
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    left: 500px;
+    opacity: 0;
+  }
+  100% {
+    left: 16px;
+    opacity: 1;
+  }
+}
