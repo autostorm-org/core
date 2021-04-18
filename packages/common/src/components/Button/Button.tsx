@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 import { WithOverrides } from "../../types";
 type ButtonProps = WithOverrides<
   React.PropsWithChildren<{
-    onClick?: () => void;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
     onHover?: () => void;
     disabled?: boolean;
   }>

@@ -5,19 +5,6 @@ export default {
   component: ProtocolsRow,
 };
 
-/**
- * 
- * @returns 
- *       <ImageLoadable
-                src={`/multiplier-logo.svg`}
-                alt={
-                  "Supported cryptocurrencies to get an overcollateralized loan. BTC ETH "
-                }
-                loader={<Loader />}
-                className={styles.multiplierLogo}
-              />
- */
-
 export const ProtocolsRowStory = () => {
   return (
     <ProtocolsRow
