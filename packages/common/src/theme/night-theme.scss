@@ -64,4 +64,12 @@
   --instructions-row-circle-border-color: var(--tertiary-main);
   --instructions-row-circle-background-color: var(--dark-main);
   --instructions-row-circle-font-weight: var(--font-weight-bold);
+  /* Loader */
+  --loader-border-top-color: var(--tertiary-main);
+  --loader-border-color: var(--dark-contrast);
+
+  /* ProtocolsRow */
+
+  --protocol-row-color: var(--dark-contrast);
+  --protocol-row-background-color: var(--dark-dark);
 }
