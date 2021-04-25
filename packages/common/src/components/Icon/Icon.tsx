@@ -1,16 +1,17 @@
 import React from "react";
-import { WithClassOverride } from "../../types";
+import { IAriaHidden, IOverridable, IStylable } from "../../types";
 
-type IconProps = WithClassOverride<{
+interface IconProps extends IAriaHidden, IOverridable, IStylable {
   src: string;
   width: number;
   height: number;
   alt: string;
-}>;
+}
 
 const Icon = (props: IconProps) => {
   return (
     <img
+      aria-hidden={props["aria-hidden"]}
       src={props.src}
       width={props.width}
       height={props.height}

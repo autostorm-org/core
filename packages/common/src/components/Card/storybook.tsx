@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import { TypographyVariant_ENUM, Typography } from "../Typography";
-import Button from "../Button";
+import { Button } from "../Button";
 import { withKnobs } from "@storybook/addon-knobs";
 export default {
   title: "Card",

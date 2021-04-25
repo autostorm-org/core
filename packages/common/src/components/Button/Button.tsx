@@ -9,7 +9,7 @@ type ButtonProps = WithOverrides<
   }>
 >;
 
-const Button = (props: ButtonProps) => {
+const Button = React.memo((props: ButtonProps) => {
   const override = props.override || "";
   return (
     <button
@@ -21,9 +21,7 @@ const Button = (props: ButtonProps) => {
       {props.children}
     </button>
   );
-};
+});
 
-export default React.memo(Button);
 export { Button };
-
 export type { ButtonProps };

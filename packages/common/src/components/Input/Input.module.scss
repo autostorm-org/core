@@ -5,12 +5,19 @@
   opacity: 1;
   display: flex;
   width: 100%;
-  padding: 15px;
+  padding: 10px 15px 10px 15px;
   box-sizing: border-box;
   align-items: center;
-  padding-right: 24px;
+  transition: 0.3s ease;
+  transition-property: color, background-color, width, height, margin, padding,
+    border, box-shadow;
   &:focus-within {
-    border-color: var(--input-border-color-focus);
+    box-shadow: 0 0 0 0.2rem var(--input-border-color-focus, #b3b3b3);
+    outline: none;
+    border: 1px solid transparent;
+  }
+  & svg {
+    color: var(--input-color);
   }
 }
 
@@ -27,5 +34,12 @@
   color: var(--input-color);
   &:focus {
     outline: none;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    filter: var(--input-calendar-picker-indicator-filter);
+  }
+  &:focus::-webkit-calendar-picker-indicator {
+    filter: var(--input-calendar-picker-indicator-filter-focus);
   }
 }

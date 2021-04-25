@@ -1,0 +1,38 @@
+@import "./autocomplete-variables.scss";
+.inputOverride {
+  z-index: $autocomplete-input-z-index;
+  position: relative;
+}
+
+.root {
+  z-index: $autocomplete-base-z-index;
+  position: relative;
+}
+
+.paneContainer {
+  transition: max-height 0.2s ease-out;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.paneExpanded {
+  max-height: 200px;
+  border: 1px solid var(--card-border-color);
+}
+
+.paneCollapsed {
+  max-height: 0px;
+  border: 0px solid var(--card-border-color);
+}
+
+.paneWrapper {
+  background: var(--card-background-color) 0% 0% no-repeat border-box;
+  opacity: 1;
+  border-radius: 0px 0px 4px 4px;
+  z-index: $autocomplete-pane-z-index;
+  box-sizing: border-box;
+  padding: 0px;
+}
