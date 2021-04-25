@@ -46,8 +46,13 @@
   --input-border-color: var(--gray-main);
   --input-border-color-focus: var(--tertiary-main);
   --input-font-weight: var(--font-weight-medium);
-  --input-font-family: var(--font-family-main);
+  --input-font-family: var(--font-family-secondary);
   --input-color: var(--dark-contrast);
+
+  --input-calendar-picker-indicator-filter: invert(80%) sepia(0%) saturate(500%)
+    hue-rotate(0deg);
+  --input-calendar-picker-indicator-filter-focus: invert(70%) sepia(50%)
+    saturate(1500%) hue-rotate(10deg);
 
   /* Footer */
   --footer-background-color: #000;
@@ -80,4 +85,12 @@
   /* Manager Row */
   --manager-row-color: var(--dark-contrast);
   --manager-row-background-color: var(--dark-dark);
+
+  /* Autocomplete */
+  --autocomplete-pane-font-family: var(--font-family-secondary);
+  --autocomplete-pane-font-size: var(--font-family-secondary);
+  --autocomplete-pane-color: var(--dark-contrast);
+  --autocomplete-pane-background-color: var(--dark-main);
+  --autocomplete-pane-background-color-highlight: var(--dark-light);
+  --autocomplete-pane-font-weight: var(--font-weight-bold);
 }
