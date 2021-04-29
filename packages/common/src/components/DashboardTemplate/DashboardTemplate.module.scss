@@ -1,0 +1,26 @@
+@import "../../theme/constants.scss";
+
+.root {
+  min-height: 700px;
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  background-color: var(--dashboard-template-background-color);
+  border: 1px solid var(--dashboard-template-border-color);
+}
+.optionsCol {
+  display: none;
+  align-items: flex-start;
+
+  min-width: 200px;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: var(--dashboard-template-border-color);
+  @media (min-width: $layout-desktop-min) {
+    display: flex;
+  }
+}
+
+.mainCol {
+  display: flex;
+}

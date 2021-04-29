@@ -1,0 +1,31 @@
+.root {
+  padding-right: 38px;
+  padding-left: 38px;
+  background: var(--pill-button-background-color) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--pill-button-border-color);
+  border-radius: 45px;
+  height: 45px;
+  opacity: 1;
+  cursor: pointer;
+  font-family: var(--pill-button-font-family);
+  font-weight: var(--pill-button-font-weight);
+  color: var(--pill-button-color);
+  min-width: 205px;
+  transition: 0.3s;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--pill-button-background-color-hover);
+  }
+  &:active {
+    background-color: var(--pill-button-background-color-hover);
+  }
+
+  &:focus,
+  &:focus-within {
+    box-shadow: 0 0 0 0.2rem var(--pill-button-box-shadow-color, #b3b3b3);
+    outline: none;
+  }
+}

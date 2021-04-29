@@ -93,4 +93,25 @@
   --autocomplete-pane-background-color: var(--dark-main);
   --autocomplete-pane-background-color-highlight: var(--dark-light);
   --autocomplete-pane-font-weight: var(--font-weight-bold);
+
+  /* Dashboard Template */
+  --dashboard-template-border-color: var(--gray-main);
+  --dashboard-template-background-color: var(--dark-main);
+
+  /* Dashboard Option */
+  --dashboard-option-col-background-color: var(--dark-main);
+  --dashboard-option-col-item-background-color: var(--dark-main);
+  --dashboard-option-col-item-background-color-hover: var(--dark-light);
+  --dashboard-option-col-item-color: var(--dark-contrast);
+  --dashboard-option-col-item-font-family: var(--font-family-secondary);
+  --dashboard-option-col-item-background-shadow-color: var(--aux-gray-1);
+
+  /* Pill Button */
+  --pill-button-background-color: var(--dark-main);
+  --pill-button-background-color-hover: var(--dark-light);
+  --pill-button-border-color: var(--gray-main);
+  --pill-button-font-family: var(--font-family-secondary);
+  --pill-button-font-weight: var(--font-weight-bold);
+  --pill-button-color: var(--dark-contrast);
+  --pill-button-box-shadow-color: var(--gray-main);
 }

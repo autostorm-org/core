@@ -183,7 +183,6 @@ const Autocomplete = (props: AutocompleteProps) => {
       props.onSelection(state.selectedOption);
     }
   }, [state.selectedOption]);
-  console.log(filteredOptions);
   return (
     <div className={styles.root} ref={rootNode}>
       <Input

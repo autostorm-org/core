@@ -1,12 +1,11 @@
 import React from "react";
-import Header from "./Header";
 import HeaderResponsive from "./HeaderResponsive";
 import Icon from "../Icon";
 import Spain from "../../assets/flags/Spain.png";
 
 export default {
   title: "Header",
-  component: Header,
+  component: HeaderResponsive,
 };
 
 const HeaderResponsiveStory = () => {
