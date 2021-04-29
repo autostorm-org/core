@@ -12,6 +12,7 @@ const Icon = (props: IconProps) => {
   return (
     <img
       aria-hidden={props["aria-hidden"]}
+      style={props.style}
       src={props.src}
       width={props.width}
       height={props.height}
