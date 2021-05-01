@@ -1,4 +1,7 @@
 .night {
+  /* General */
+  --backdrop-background-color: var(--dark-dark);
+
   /* Button */
   --button-background-color: var(--tertiary-main);
   --button-color: var(--tertiary-contrast);
@@ -30,6 +33,7 @@
   --header-item-background-color-hover: var(--dark-light);
   --header-item-box-shadow-color: var(--aux-gray-1);
   --header-item-height: 66px;
+  --header-item-height-mobile: 54px;
 
   /* ListFullScreen*/
   --list-full-screen-color: var(--dark-contrast);
@@ -101,10 +105,18 @@
   /* Dashboard Option */
   --dashboard-option-col-background-color: var(--dark-main);
   --dashboard-option-col-item-background-color: var(--dark-main);
+  --dashboard-option-col-item-background-color-active-element: var(
+    --dark-light
+  );
+
   --dashboard-option-col-item-background-color-hover: var(--dark-light);
   --dashboard-option-col-item-color: var(--dark-contrast);
   --dashboard-option-col-item-font-family: var(--font-family-secondary);
   --dashboard-option-col-item-background-shadow-color: var(--aux-gray-1);
+  --dashboard-option-box-shadow-color: var(--gray-main);
+  --dashboard-option-box-border-right-color-active-element: var(
+    --tertiary-main
+  );
 
   /* Pill Button */
   --pill-button-background-color: var(--dark-main);

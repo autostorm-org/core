@@ -1,11 +1,31 @@
+@import "../../theme/constants.scss";
+
 .root {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  list-style-type: none;
   margin: 0px;
   padding: 0px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: var(--dashboard-option-col-background-color);
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-color: var(--dashboard-template-border-color);
+
+  @media (min-width: $layout-tablet-min) {
+    position: initial;
+
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--dashboard-option-col-background-color);
+
+    border: none;
+  }
 }

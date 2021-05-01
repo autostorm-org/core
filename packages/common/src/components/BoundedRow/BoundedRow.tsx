@@ -1,21 +1,20 @@
 // React
 import React from "react";
 // type imports
-import type { WithClassOverride } from "../../types";
+import type { IOverridable, IStylable } from "../../types";
 import styles from "./BoundedRow.module.scss";
 
-type BoundedRowProps = WithClassOverride<
-  React.PropsWithChildren<{
-    fullWidth?: boolean;
-  }>
->;
+interface BoundedRowProps extends IOverridable, IStylable {
+  fullWidth?: boolean;
+}
 
-function BoundedRow(props: BoundedRowProps) {
+function BoundedRow(props: React.PropsWithChildren<BoundedRowProps>) {
   return (
     <div
       className={`${styles.root} ${props.override || ""} ${
         props.fullWidth ? styles.fullWidthRoot : ""
       }`}
+      style={props.style}
     >
       {props.children}
     </div>

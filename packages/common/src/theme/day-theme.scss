@@ -1,4 +1,7 @@
 .day {
+  /* General */
+  --backdrop-background-color:#fff
+
   /* Button */
   --button-background-color: var(--primary-main);
   --button-color: var(--primary-contrast);
@@ -30,6 +33,7 @@
   --header-item-background-color-hover: var(--primary-dark);
   --header-item-box-shadow-color: var(--aux-gray-1);
   --header-item-height: 66px;
+  --header-item-height-mobile: 54px;
   /* ListFullScreen */
   --list-full-screen-color: #000;
   --list-full-screen-background-color: white;
@@ -99,12 +103,17 @@
   /* Dashboard Option */
   --dashboard-option-col-background-color: var(--white-main);
   --dashboard-option-col-item-background-color: var(--white-main);
+  --dashboard-option-col-item-background-color-active-element: var(--gray-light);
   --dashboard-option-col-item-background-color-hover: var(--gray-light);
   --dashboard-option-col-item-color: #000;
   --dashboard-option-col-item-font-family: var(--font-family-secondary);
   --dashboard-option-col-item-background-shadow-color: var(--aux-gray-1);
+  --dashboard-option-box-shadow-color: var(--gray-main);
+  --dashboard-option-box-border-right-color-active-element: var(--primary-main);
+
+
   /* Pill Button */
-  --pill-button-background-color: var(--gray-light);
+  --pill-button-background-color: var(--white-main);
   --pill-button-background-color-hover: var(--gray-main);
   --pill-button-border-color: var(--gray-main);
   --pill-button-font-family: var(--font-family-secondary);
