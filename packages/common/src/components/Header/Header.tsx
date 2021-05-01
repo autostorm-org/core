@@ -10,6 +10,7 @@ import styles from "./Header.module.scss";
 type HeaderProps = WithClassOverride<
   React.PropsWithChildren<{
     submenu?: React.ReactNode;
+    fullWidth?: boolean;
   }>
 >;
 
@@ -17,7 +18,7 @@ const Header = (props: HeaderProps) => {
   const overrideClass = props.override || "";
   return (
     <nav className={`${styles.root} ${overrideClass}`} aria-label="Autofica">
-      <BoundedRow>
+      <BoundedRow fullWidth={Boolean(props.fullWidth)}>
         <ul className={styles.menu} role="menu">
           {props.children}
         </ul>

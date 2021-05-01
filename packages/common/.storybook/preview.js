@@ -15,17 +15,19 @@ export const parameters = {
 const useStorybookThemeToggle = () => {
   const themeing = useStaticThemeContext();
   const isDayMode = boolean("DAY MODE", true);
+
+  React.useEffect(() => {
+    document.body.style.backgroundColor = "var(--backdrop-background-color)";
+  }, []);
   React.useEffect(() => {
     if (isDayMode) {
       themeing.setTheme({
         name: "day",
       });
-      document.body.style.backgroundColor = "#D7D7D7";
     } else {
       themeing.setTheme({
         name: "night",
       });
-      document.body.style.backgroundColor = "#212121";
     }
   }, [isDayMode]);
 };

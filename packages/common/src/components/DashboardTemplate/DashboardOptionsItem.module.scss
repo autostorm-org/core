@@ -1,34 +1,54 @@
+@import "../../theme/constants.scss";
+
 .root {
   margin: 0px;
   width: 100%;
+  margin-right: 0.2rem;
+  display: flex;
+
+  @media (min-width: $layout-tablet-min) {
+    margin-bottom: 0.2rem;
+    margin-right: auto;
+  }
 }
 
 .activeElement {
   text-decoration: underline;
+  background-color: var(
+    --dashboard-option-col-item-background-color-active-element
+  );
+
+  @media (min-width: $layout-tablet-min) {
+    border-right: 0.2rem solid
+      var(--dashboard-option-box-border-right-color-active-element);
+  }
 }
 .nonActiveElement {
   text-decoration: none;
+  background-color: var(--dashboard-option-col-item-background-color);
+  border-right: 0.2rem solid transparent;
 }
 .anchor {
-  background-color: var(--dashboard-option-col-item-background-color);
-  padding-top: 22px;
-  padding-bottom: 22px;
+  justify-content: center;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: left;
   text-align: left;
-  font: normal normal bold 16px/24px
+  font: normal normal bold 14px/24px
     var(--dashboard-option-col-item-font-family);
   letter-spacing: 0px;
   color: var(--dashboard-option-col-item-color);
   opacity: 1;
-  padding-left: 32px;
 
   box-sizing: border-box;
   position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
 
-  min-width: 290px;
+  // min-width: 290px;
   &:hover {
     background-color: var(--dashboard-option-col-item-background-color-hover);
   }
@@ -38,7 +58,18 @@
   }
   &:focus,
   &:focus-within {
-    box-shadow: 0 0 0 0.2rem var(--pill-button-box-shadow-color, #b3b3b3);
+    box-shadow: 0 0 0 0.2rem var(--dashboard-option-box-shadow-color, #b3b3b3);
     outline: none;
+  }
+
+  @media (min-width: $layout-tablet-min) {
+    border-top: none;
+  }
+
+  @media (min-width: $layout-desktop-min) {
+    justify-content: left;
+    border-top: none;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

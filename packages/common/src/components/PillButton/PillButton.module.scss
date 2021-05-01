@@ -1,6 +1,6 @@
 .root {
-  padding-right: 38px;
-  padding-left: 38px;
+  padding-right: 20px;
+  padding-left: 20px;
   background: var(--pill-button-background-color) 0% 0% no-repeat padding-box;
   border: 1px solid var(--pill-button-border-color);
   border-radius: 45px;
@@ -10,7 +10,8 @@
   font-family: var(--pill-button-font-family);
   font-weight: var(--pill-button-font-weight);
   color: var(--pill-button-color);
-  min-width: 205px;
+  // min-width: 205px;
+  justify-content: center;
   transition: 0.3s;
   text-transform: capitalize;
   display: flex;
@@ -27,5 +28,9 @@
   &:focus-within {
     box-shadow: 0 0 0 0.2rem var(--pill-button-box-shadow-color, #b3b3b3);
     outline: none;
+  }
+
+  & svg {
+    color: var(--pill-button-color);
   }
 }
