@@ -1,5 +1,5 @@
 import React from "react";
-import { IAriaHidden, IOverridable, IStylable } from "../../types";
+import type { IAriaHidden, IOverridable, IStylable } from "../../types";
 
 interface IconProps extends IAriaHidden, IOverridable, IStylable {
   src: string;

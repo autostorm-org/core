@@ -9,19 +9,22 @@ type ButtonProps = WithOverrides<
   }>
 >;
 
-const Button = React.memo((props: ButtonProps) => {
-  const override = props.override || "";
-  return (
-    <button
-      className={`${styles.root} ${override}`}
-      onClick={props.onClick}
-      style={props.style}
-      disabled={Boolean(props.disabled)}
-    >
-      {props.children}
-    </button>
-  );
-});
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (props: ButtonProps, ref) => {
+    const override = props.override || "";
+    return (
+      <button
+        className={`${styles.root} ${override}`}
+        onClick={props.onClick}
+        style={props.style}
+        disabled={Boolean(props.disabled)}
+        ref={ref}
+      >
+        {props.children}
+      </button>
+    );
+  }
+);
 
 export { Button };
 export type { ButtonProps };

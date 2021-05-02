@@ -1,14 +1,11 @@
 import React from "react";
 import DashboardTemplate from "./DashboardTemplate";
-import { BoundedRow } from "../BoundedRow";
 import { Typography, TypographyVariant_ENUM } from "../Typography";
 import Icon from "../Icon";
-import Spain from "../../assets/flags/Spain.png";
 import { HeaderResponsive } from "../Header";
 import DashboardOptionsColumn from "./DashboardOptionsColumn";
 import DashboardOptionsItem from "./DashboardOptionsItem";
 import { PillButton } from "./../PillButton";
-import { FooterResponsive } from "../Footer";
 import { AlertTriangle } from "react-feather";
 import { Eye, ArrowLeftCircle, DollarSign, ArrowUp, Key } from "react-feather";
 import styles from "./storybook.module.scss";

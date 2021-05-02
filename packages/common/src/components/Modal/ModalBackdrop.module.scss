@@ -1,0 +1,35 @@
+@import "../../theme/constants.scss";
+
+.root {
+  // backdrop-filter: blur(2px); /* Chrome and Opera */
+  background-color: rgb(204, 204, 204, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  // opacity: var(--modal-opacity);
+}
+
+.visibleRoot {
+  display: block;
+}
+
+.invisibleRoot {
+  display: none;
+}
+.contentContainer {
+  display: inline-block;
+  position: relative;
+  transform: translateX(-50%);
+  max-width: 90%;
+  width: 500px;
+  top: 10%;
+  left: 50%;
+
+  @media (min-width: $layout-tablet-min) {
+    top: 15%;
+  }
+}
