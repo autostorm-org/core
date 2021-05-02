@@ -6,7 +6,6 @@ import HeaderItem from "./HeaderItem";
 import { ListFullScreen, ListFullScreenRow } from "../List";
 import HeaderItemAbsolute from "./HeaderItemAbsolute";
 import { Menu } from "react-feather";
-import { Input } from "../Input";
 import { WithClassOverride } from "../../types";
 import styles from "./HeaderResponsive.module.scss";
 

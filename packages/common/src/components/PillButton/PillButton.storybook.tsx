@@ -5,7 +5,6 @@ import PillButton from "./PillButton";
 import { Card } from "../Card";
 import { Icon } from "../Icon";
 import { Typography, TypographyVariant_ENUM } from "../Typography";
-import { ImageLoadable } from "../ImageLoadable";
 export default {
   title: "PillButton Story",
   component: PillButton,

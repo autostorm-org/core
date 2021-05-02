@@ -1,0 +1,20 @@
+.root {
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+
+  &:focus,
+  &:focus-within {
+    box-shadow: 0 0 0 0.2rem var(--button-box-shadow-color, #b3b3b3);
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+  color: var(--icon-button-color);
+}

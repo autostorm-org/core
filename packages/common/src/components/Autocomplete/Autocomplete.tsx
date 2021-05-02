@@ -39,7 +39,6 @@ const Autocomplete = (props: AutocompleteProps) => {
 
   const onInputFocus = React.useCallback(
     (e): void => {
-      console.log("FOCUSED");
       if (state.focusState == EnumAutoCompleteStates.OFF) {
         setState({
           focusState: EnumAutoCompleteStates.SELECTING,

@@ -56,4 +56,9 @@ export interface IIdentifiable {
   id?: string;
 }
 
+export interface IButton {
+  disabled?: boolean;
+  title?: string;
+}
+
 export type Maybe<T> = T | null | undefined;
