@@ -1,0 +1,3 @@
+// Z Index hierarchy for non static elements in ui
+$dashboard-template-nav-mobile-z-index: 1;
+$modal-backdrop-z-index: $dashboard-template-nav-mobile-z-index + 1;

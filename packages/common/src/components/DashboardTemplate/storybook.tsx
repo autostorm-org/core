@@ -8,6 +8,7 @@ import DashboardOptionsItem from "./DashboardOptionsItem";
 import { PillButton } from "./../PillButton";
 import { AlertTriangle } from "react-feather";
 import { Eye, ArrowLeftCircle, DollarSign, ArrowUp, Key } from "react-feather";
+import { ModalStory } from "../Modal/Modal.storybook";
 import styles from "./storybook.module.scss";
 
 export default {
@@ -86,12 +87,15 @@ export const DashboardTemplateStory = () => {
       <div>
         <DashboardTemplate
           mainContent={
-            <Typography
-              variant={TypographyVariant_ENUM.h3}
-              style={{ padding: 30 }}
-            >
-              Main Content
-            </Typography>
+            <div>
+              <Typography
+                variant={TypographyVariant_ENUM.h3}
+                style={{ padding: 30 }}
+              >
+                Main Content
+              </Typography>
+              <ModalStory />
+            </div>
           }
           optionsContent={
             <>

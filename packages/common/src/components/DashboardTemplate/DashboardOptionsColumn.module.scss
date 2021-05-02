@@ -1,7 +1,10 @@
 @import "../../theme/constants.scss";
+@import "../../theme/z-indexes.scss";
 
 .root {
   position: fixed;
+  z-index: $dashboard-template-nav-mobile-z-index;
+
   bottom: 0px;
   display: flex;
   flex-direction: row;
@@ -12,9 +15,8 @@
   border-top-width: 1px;
   border-top-style: solid;
   border-color: var(--dashboard-template-border-color);
-
   @media (min-width: $layout-tablet-min) {
-    position: initial;
+    position: static;
 
     margin: 0px;
     padding: 0px;
