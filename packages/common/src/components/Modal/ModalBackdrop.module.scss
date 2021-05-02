@@ -1,4 +1,5 @@
 @import "../../theme/constants.scss";
+@import "../../theme/z-indexes.scss";
 
 .root {
   // backdrop-filter: blur(2px); /* Chrome and Opera */
@@ -6,6 +7,8 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
+  z-index: $modal-backdrop-z-index;
+
   top: 0px;
   right: 0px;
   left: 0px;
@@ -28,7 +31,6 @@
   width: 500px;
   top: 10%;
   left: 50%;
-
   @media (min-width: $layout-tablet-min) {
     top: 15%;
   }
