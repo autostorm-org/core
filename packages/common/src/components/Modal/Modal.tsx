@@ -42,14 +42,14 @@ const useEscapePressed = (
   const onEscapePressedCallback = useEscapePressedCallback(onEscapePressed);
   React.useLayoutEffect(() => {
     // Save for unmount closure
-    const wasVisble = isVisible;
+    const wasVisible = isVisible;
     // Add callback only when the component was visible
-    if (wasVisble == true) {
+    if (isVisible == true) {
       document.addEventListener("keydown", onEscapePressedCallback);
     }
     return () => {
       // Read closure value and remove listener if it was added
-      if (wasVisble == true) {
+      if (wasVisible == true) {
         document.removeEventListener("keydown", onEscapePressedCallback);
       }
     };
@@ -96,7 +96,7 @@ const Modal = React.memo((props: React.PropsWithChildren<IModalProps>) => {
   );
   useScrollLock(props.isVisible);
   return (
-    <ModalPortal>
+    <ModalPortal isVisible={props.isVisible}>
       <ModalBackdrop
         isVisible={props.isVisible}
         onBackdropClick={props.onBackdropClick}

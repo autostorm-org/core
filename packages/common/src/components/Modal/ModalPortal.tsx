@@ -6,9 +6,10 @@ import type { IOverridable } from "../../types";
 
 interface ModalPortalProps extends IOverridable {
   modalElementId?: string;
+  isVisible: boolean;
 }
 
-const getEscapeKeyListener = (
+const getTabKeyListener = (
   firstFocusableElement: HTMLElement,
   lastFocusableElement: HTMLElement
 ) => {
@@ -37,11 +38,13 @@ const getEscapeKeyListener = (
 };
 
 const useTabTrapping = (
-  modalElRef: React.MutableRefObject<HTMLElement | null>
+  modalElRef: React.MutableRefObject<HTMLElement | null>,
+  isVisible: boolean
 ) => {
   return React.useLayoutEffect(() => {
     const modalEl = modalElRef.current;
-    if (modalEl == null) {
+    const wasVisible = isVisible;
+    if (modalEl == null || isVisible == false) {
       return;
     }
     const focusableElements =
@@ -60,7 +63,7 @@ const useTabTrapping = (
       firstFocusableElement instanceof HTMLElement &&
       lastFocusableElement instanceof HTMLElement
     ) {
-      keyDownListener = getEscapeKeyListener(
+      keyDownListener = getTabKeyListener(
         firstFocusableElement,
         lastFocusableElement
       );
@@ -73,7 +76,9 @@ const useTabTrapping = (
     }
 
     return () => {
-      document.removeEventListener("keydown", keyDownListener);
+      if (wasVisible) {
+        document.removeEventListener("keydown", keyDownListener);
+      }
     };
   });
 };
@@ -82,15 +87,17 @@ const useModalRef = (modalId: string) => {
   return React.useRef(document.getElementById(modalId));
 };
 
-const ModalPortal = (props: React.PropsWithChildren<ModalPortalProps>) => {
-  const suppliedModalId = props.modalElementId ?? modalElementId;
-  const modalElRef = useModalRef(suppliedModalId);
-  useTabTrapping(modalElRef);
-  if (modalElRef.current == null) {
-    throw new Error(getModalErrorMessage(suppliedModalId));
+const ModalPortal = React.memo(
+  (props: React.PropsWithChildren<ModalPortalProps>) => {
+    const suppliedModalId = props.modalElementId ?? modalElementId;
+    const modalElRef = useModalRef(suppliedModalId);
+    useTabTrapping(modalElRef, props.isVisible);
+    if (modalElRef.current == null) {
+      throw new Error(getModalErrorMessage(suppliedModalId));
+    }
+    return ReactDOM.createPortal(props.children, modalElRef.current);
   }
-  return ReactDOM.createPortal(props.children, modalElRef.current);
-};
+);
 
 export default ModalPortal;
 export type { ModalPortalProps };
