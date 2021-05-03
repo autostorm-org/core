@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "./ModalBackdrop.module.scss";
 
-type BackdropClickHandler = () => void;
+type onBackdropClickHandler = () => void;
 
 interface IModalBackdropProps {
-  backdropClickHandler: BackdropClickHandler;
+  onBackdropClick?: onBackdropClickHandler;
   isVisible: boolean;
   contentContainerOverride?: string;
 }
 
 const useBackdropClickHanlder = (
   innerContainerRef: React.MutableRefObject<HTMLDivElement | null>,
-  backdropClickHandler: BackdropClickHandler
+  onBackdropClick?: onBackdropClickHandler
 ) => {
   return React.useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -20,11 +20,13 @@ const useBackdropClickHanlder = (
           e.target instanceof HTMLElement &&
           !innerContainerRef.current.contains(e.target)
         ) {
-          backdropClickHandler();
+          if (onBackdropClick != null) {
+            onBackdropClick();
+          }
         }
       }
     },
-    [innerContainerRef.current, backdropClickHandler]
+    [innerContainerRef.current, onBackdropClick]
   );
 };
 
@@ -33,7 +35,7 @@ const ModalBackdrop = (props: React.PropsWithChildren<IModalBackdropProps>) => {
 
   const backdropClickHandler = useBackdropClickHanlder(
     innerContainerRef,
-    props.backdropClickHandler
+    props.onBackdropClick
   );
 
   const visibilityClass = props.isVisible

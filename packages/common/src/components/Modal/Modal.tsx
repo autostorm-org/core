@@ -5,67 +5,73 @@ import { Card } from "../Card";
 
 import styles from "./Modal.module.scss";
 
-type onOpenHandler = () => void;
-type onCloseHandler = () => void;
+type ModalDidOpenHandler = () => void;
+type ModalDidCloseHandler = () => void;
+type OnBackDropClickHandler = () => void;
+type OnEscapePressedHandler = () => void;
 
 interface IModalProps {
   isVisible: boolean;
   setVisible: (isVisible: boolean) => void;
-  onOpen?: onOpenHandler;
-  onClose?: onCloseHandler;
+  modalDidOpen?: ModalDidOpenHandler;
+  modalDidClose?: ModalDidCloseHandler;
+  onBackdropClick?: OnBackDropClickHandler;
+  onEscapePressed?: OnEscapePressedHandler;
   cardOverride?: string;
 }
-type setInvisibleCallback = () => void;
 
-const useEscapePressedCallback = (setInvisible: setInvisibleCallback) => {
+const useEscapePressedCallback = (onEscapePressed?: OnEscapePressedHandler) => {
   return React.useCallback(
     (e: KeyboardEvent) => {
       const escPressed = e.key == "Escape";
       if (escPressed == false) {
         return;
       }
-      setInvisible();
+      if (onEscapePressed) {
+        onEscapePressed();
+      }
     },
-    [setInvisible]
+    [onEscapePressed]
   );
 };
 
 const useEscapePressed = (
   isVisible: boolean,
-  setInvisible: setInvisibleCallback
+  onEscapePressed?: OnEscapePressedHandler
 ) => {
-  const escapePressedCallback = useEscapePressedCallback(setInvisible);
+  const onEscapePressedCallback = useEscapePressedCallback(onEscapePressed);
   React.useLayoutEffect(() => {
-    document.addEventListener("keydown", escapePressedCallback);
+    // Save for unmount closure
+    const wasVisble = isVisible;
+    // Add callback only when the component was visible
+    if (wasVisble == true) {
+      document.addEventListener("keydown", onEscapePressedCallback);
+    }
     return () => {
-      document.removeEventListener("keydown", escapePressedCallback);
+      // Read closure value and remove listener if it was added
+      if (wasVisble == true) {
+        document.removeEventListener("keydown", onEscapePressedCallback);
+      }
     };
-  }, [isVisible, escapePressedCallback]);
+  }, [isVisible, onEscapePressedCallback]);
 };
 
-const useSetInvisibleCallback = (
-  setVisible: (isVisible: boolean) => void
-): setInvisibleCallback => {
-  return React.useCallback(() => {
-    setVisible(false);
-  }, [setVisible]);
-};
 const useVisibilityChangeHandler = (
   isVisible: boolean,
-  onOpen?: onOpenHandler,
-  onClose?: onCloseHandler
+  modalDidOpen?: ModalDidOpenHandler,
+  modalDidClose?: ModalDidCloseHandler
 ) => {
   React.useLayoutEffect(() => {
-    if (isVisible == true && onOpen != null) {
-      onOpen();
-    } else if (isVisible == false && onClose != null) {
-      onClose();
+    if (isVisible == true && modalDidOpen != null) {
+      modalDidOpen();
+    } else if (isVisible == false && modalDidClose != null) {
+      modalDidClose();
     }
-  }, [isVisible, onOpen, onClose]);
+  }, [isVisible, modalDidOpen, modalDidClose]);
 };
 
 const useScrollLock = (isVisible: boolean) => {
-  return React.useEffect(() => {
+  return React.useLayoutEffect(() => {
     // Add or remove style to prevent scrolling
     if (isVisible) {
       document.body.classList.add(styles.preventScrolling);
@@ -82,15 +88,18 @@ const useScrollLock = (isVisible: boolean) => {
 };
 
 const Modal = React.memo((props: React.PropsWithChildren<IModalProps>) => {
-  const setInvisibleCallback = useSetInvisibleCallback(props.setVisible);
-  useEscapePressed(props.isVisible, setInvisibleCallback);
-  useVisibilityChangeHandler(props.isVisible, props.onOpen, props.onClose);
+  useEscapePressed(props.isVisible, props.onEscapePressed);
+  useVisibilityChangeHandler(
+    props.isVisible,
+    props.modalDidOpen,
+    props.modalDidClose
+  );
   useScrollLock(props.isVisible);
   return (
     <ModalPortal>
       <ModalBackdrop
         isVisible={props.isVisible}
-        backdropClickHandler={setInvisibleCallback}
+        onBackdropClick={props.onBackdropClick}
       >
         <Card override={`${styles.card} ${props.cardOverride ?? ""}`}>
           {props.children}
