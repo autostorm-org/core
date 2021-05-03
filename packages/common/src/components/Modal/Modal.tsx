@@ -71,7 +71,7 @@ const useVisibilityChangeHandler = (
 };
 
 const useScrollLock = (isVisible: boolean) => {
-  return React.useEffect(() => {
+  return React.useLayoutEffect(() => {
     // Add or remove style to prevent scrolling
     if (isVisible) {
       document.body.classList.add(styles.preventScrolling);
