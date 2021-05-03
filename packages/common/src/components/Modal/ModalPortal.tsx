@@ -28,7 +28,8 @@ const getEscapeKeyListener = (
       // if tab key is pressed
       if (document.activeElement == lastFocusableElement) {
         // if focused has reached to last focusable element then focus first focusable element after pressing tab
-        firstFocusableElement.focus(); // add focus for the last focusable element
+        // add focus for the last focusable element
+        firstFocusableElement.focus();
         e.preventDefault();
       }
     }

@@ -10,10 +10,16 @@ export default {
   component: Modal,
 };
 
+const useHideModalHandler = (setVisible: (isVisible: boolean) => void) => {
+  return React.useCallback(() => {
+    setVisible(false);
+  }, [setVisible]);
+};
+
 export const ModalStory = () => {
   const [isVisible, setVisible] = React.useState(false);
-
   const buttonRef = React.useRef<HTMLButtonElement | null>(null);
+  const hideModalCallback = useHideModalHandler(setVisible);
 
   return (
     <>
@@ -29,7 +35,9 @@ export const ModalStory = () => {
       <Modal
         isVisible={isVisible}
         setVisible={setVisible}
-        onClose={() => {
+        onBackdropClick={hideModalCallback}
+        onEscapePressed={hideModalCallback}
+        modalDidClose={() => {
           if (buttonRef.current != null) {
             buttonRef.current.focus();
           }
