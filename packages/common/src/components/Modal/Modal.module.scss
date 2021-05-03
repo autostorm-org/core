@@ -1,5 +1,7 @@
 .card {
   opacity: 1;
-  z-index: 1;
-  // display: inline-block;
+}
+
+.preventScrolling {
+  overflow: hidden;
 }

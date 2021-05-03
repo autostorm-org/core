@@ -64,23 +64,40 @@ const useVisibilityChangeHandler = (
   }, [isVisible, onOpen, onClose]);
 };
 
-const Modal = (props: React.PropsWithChildren<IModalProps>) => {
+const useScrollLock = (isVisible: boolean) => {
+  return React.useEffect(() => {
+    // Add or remove style to prevent scrolling
+    if (isVisible) {
+      document.body.classList.add(styles.preventScrolling);
+    } else {
+      document.body.classList.remove(styles.preventScrolling);
+    }
+    return () => {
+      // Finally if the style persists remove it.
+      if (document.body.classList.contains(styles.preventScrolling)) {
+        document.body.classList.remove(styles.preventScrolling);
+      }
+    };
+  }, [isVisible]);
+};
+
+const Modal = React.memo((props: React.PropsWithChildren<IModalProps>) => {
   const setInvisibleCallback = useSetInvisibleCallback(props.setVisible);
   useEscapePressed(props.isVisible, setInvisibleCallback);
   useVisibilityChangeHandler(props.isVisible, props.onOpen, props.onClose);
-  const cardOverrideClass = props.cardOverride ?? "";
+  useScrollLock(props.isVisible);
   return (
     <ModalPortal>
       <ModalBackdrop
         isVisible={props.isVisible}
         backdropClickHandler={setInvisibleCallback}
       >
-        <Card override={`${styles.card} ${cardOverrideClass}`}>
+        <Card override={`${styles.card} ${props.cardOverride ?? ""}`}>
           {props.children}
         </Card>
       </ModalBackdrop>
     </ModalPortal>
   );
-};
+});
 export default Modal;
 export type { IModalProps };
