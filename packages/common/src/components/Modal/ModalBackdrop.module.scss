@@ -2,8 +2,8 @@
 @import "../../theme/z-indexes.scss";
 
 .root {
-  // backdrop-filter: blur(2px); /* Chrome and Opera */
-  background-color: rgb(204, 204, 204, 0.6);
+  backdrop-filter: blur(2px); /* Chrome and Opera */
+  background-color: rgb(0, 0, 0, 0.4);
   width: 100vw;
   height: 100vh;
   position: fixed;

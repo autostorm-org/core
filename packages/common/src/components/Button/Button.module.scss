@@ -1,7 +1,7 @@
+@import "../../theme/constants.scss";
 .root {
   background-color: var(--button-background-color, #012169);
   color: var(--button-color, #ffffff);
-  padding: 14px 16px 14px 16px;
   border: none;
   border-radius: 4px;
   text-align: left;
@@ -13,6 +13,11 @@
   line-height: 19px;
   cursor: pointer;
   user-select: none;
+  padding: 10px 16px 10px 16px;
+
+  @media (min-width: $layout-tablet-min) {
+    padding: 14px 16px 14px 16px;
+  }
 
   &:hover {
     background-color: var(--button-background-color-hover, #001034);

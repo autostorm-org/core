@@ -2,17 +2,15 @@
 import React from "react";
 import { TypographyVariant_ENUM } from "./constants";
 // type import
-import { WithOverrides } from "../../types";
+import type { IOverridable, IIdentifiable, IStylable } from "../../types";
 // Styles
 import styles from "./Typography.module.scss";
 
-type TypeTypographyProps = WithOverrides<
-  React.PropsWithChildren<{
-    variant: TypographyVariant_ENUM;
-  }>
->;
+interface ITypographyProps extends IOverridable, IIdentifiable, IStylable {
+  variant: TypographyVariant_ENUM;
+}
 
-function Typography(props: TypeTypographyProps) {
+function Typography(props: React.PropsWithChildren<ITypographyProps>) {
   const className = styles[props.variant];
   const overrideClassName = props.override || "";
   return (
@@ -22,4 +20,4 @@ function Typography(props: TypeTypographyProps) {
   );
 }
 export default Typography;
-export type { TypeTypographyProps };
+export type { ITypographyProps };
