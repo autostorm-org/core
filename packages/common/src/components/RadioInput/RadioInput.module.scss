@@ -1,0 +1,70 @@
+.root {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: 0.2s;
+  transition-property: box-shadow;
+  cursor: pointer;
+  &:focus,
+  &:focus-within {
+    box-shadow: 0 0 0 0.2rem var(--button-box-shadow-color, #b3b3b3);
+    outline: none;
+  }
+
+  & input:not(:checked) ~ svg {
+    filter: var(--radio-input-fitler-unchecked);
+  }
+  & input:checked ~ svg {
+    filter: var(--radio-input-filter-checked);
+  }
+
+  & input:disabled ~ svg {
+    filter: var(--radio-input-fitler-disabled);
+    cursor: none;
+  }
+
+  & input:checked:disabled ~ svg {
+    filter: var(--radio-input-filter-checked-disabled);
+  }
+}
+
+.disabledText {
+  opacity: 0.8;
+}
+
+.input {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: inherit;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  z-index: 1;
+  position: absolute;
+}
+
+.outerCircle {
+  width: 20px;
+}
+
+.overlay {
+  width: 20px;
+  position: absolute;
+  left: 0;
+  transform: scale(0);
+  transition: 0.2s;
+  transition-property: transform;
+}
+.overlayVisible {
+  transform: scale(1);
+}
+
+.svgContainer {
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}

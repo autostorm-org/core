@@ -130,4 +130,13 @@
   /* IconButton*/
   --icon-button-color: var(--dark-contrast);
   --icon-button-color-disabled: var(--gray-light);
+  /* Radio Input */
+  --radio-input-filter-checked: invert(83%) sepia(8%) saturate(6343%)
+    hue-rotate(1deg) brightness(108%) contrast(105%);
+  --radio-input-fitler-unchecked: invert(94%) sepia(69%) saturate(0%)
+    hue-rotate(147deg) brightness(95%) contrast(80%);
+  --radio-input-fitler-disabled: invert(17%) sepia(10%) saturate(818%)
+    hue-rotate(175deg) brightness(95%) contrast(85%) opacity(70%);
+  --radio-input-filter-checked-disabled: invert(83%) sepia(8%) saturate(6343%)
+    hue-rotate(1deg) brightness(108%) contrast(105%) opacity(60%);
 }

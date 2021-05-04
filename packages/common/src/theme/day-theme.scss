@@ -127,5 +127,11 @@
   /* IconButton*/
   --icon-button-color:#000;
   --icon-button-color-disabled:var(--gray-light);;
+  /* Radio Input */
+
+  --radio-input-filter-checked: invert(12%) sepia(26%) saturate(7367%) hue-rotate(215deg) brightness(89%) contrast(109%);
+  --radio-input-fitler-unchecked: invert(17%) sepia(10%) saturate(818%) hue-rotate(175deg) brightness(95%) contrast(85%);
+  --radio-input-fitler-disabled: invert(17%) sepia(10%) saturate(818%) hue-rotate(175deg) brightness(95%) contrast(85%) opacity(70%);
+  --radio-input-filter-checked-disabled: invert(12%) sepia(26%) saturate(7367%) hue-rotate(215deg) brightness(89%) contrast(109%) opacity(60%);
 
 }
