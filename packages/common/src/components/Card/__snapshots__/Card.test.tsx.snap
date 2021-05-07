@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DesktopCardStory Test Should render DesktopCardStory component 1`] = `
+<div
+  style={
+    Object {
+      "height": 240,
+      "width": 560,
+    }
+  }
+>
+  <div
+    className="root undefined"
+    style={
+      Object {
+        "padding": "30px",
+      }
+    }
+  >
+    <span
+      className="h1"
+    >
+      Crypto car loan finder
+    </span>
+    <br />
+    <span
+      className="p"
+    >
+      Get a collateralized loan for your next car purchase. Chose your backing assets. Powered by Multiplier.
+       
+    </span>
+    <br />
+    <button
+      className="root "
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "marginTop": 10,
+        }
+      }
+    >
+      Call to action
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MobileCardStory Test Should render MobileCardStory component 1`] = `
+<div
+  style={
+    Object {
+      "height": 184,
+      "width": 350,
+    }
+  }
+>
+  <div
+    className="root undefined"
+  >
+    <span
+      className="h3"
+    >
+      Card title
+    </span>
+    <br />
+    <span
+      className="p"
+    >
+      Card body contents. Card body contents. Card body contents. Card body contents.
+    </span>
+    <br />
+    <button
+      className="root "
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "marginTop": 9,
+        }
+      }
+    >
+      Call to action
+    </button>
+  </div>
+</div>
+`;

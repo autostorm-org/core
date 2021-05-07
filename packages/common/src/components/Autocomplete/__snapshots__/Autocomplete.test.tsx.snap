@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutocompleteStory Test Should render AutocompleteStory component 1`] = `
+<div
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <span
+    className="h3"
+  >
+    Autocomplete
+  </span>
+  <div
+    className="root"
+  >
+    <label
+      aria-label="Cryptocurrencies combobox"
+      className="root inputOverride"
+      htmlFor="autocomplete-story"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-owns="autocomplete-story-pane"
+        autoComplete="off"
+        className="input"
+        id="autocomplete-story"
+        onChange={[Function]}
+        onFocusCapture={[Function]}
+        role="combobox"
+        type="text"
+        value=""
+      />
+      <svg
+        fill="none"
+        height={24}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </label>
+    <div
+      className="paneContainer paneWrapper paneCollapsed"
+    >
+      <ul
+        aria-label="3 combobox options available"
+        className="root"
+        id="autocomplete-story-pane"
+        role="listbox"
+        tabIndex={-1}
+      >
+        <li
+          aria-selected="false"
+          className="listElement "
+          id="Bitcoin - BTC"
+          onClick={[Function]}
+          role="option"
+        >
+          <img
+            alt="bitcoin logo"
+            aria-hidden="true"
+            className=""
+            height={22}
+            src="/crypto-logos/btc.svg"
+            width={22}
+          />
+          <span
+            className="listElementWrapper"
+          >
+            Bitcoin
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          className="listElement "
+          id="Ethereum - ETH"
+          onClick={[Function]}
+          role="option"
+        >
+          <img
+            alt="Ethereum logo"
+            aria-hidden="true"
+            className=""
+            height={22}
+            src="/crypto-logos/eth.svg"
+            width={22}
+          />
+          <span
+            className="listElementWrapper"
+          >
+            Ethereum
+          </span>
+        </li>
+        <li
+          aria-selected="false"
+          className="listElement "
+          id="Binance Coin - BNB"
+          onClick={[Function]}
+          role="option"
+        >
+          <img
+            alt="BNB logo"
+            aria-hidden="true"
+            className=""
+            height={22}
+            src="/crypto-logos/bnb.svg"
+            width={22}
+          />
+          <span
+            className="listElementWrapper"
+          >
+            Binance Coin
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    aria-hidden={true}
+  >
+    <span
+      className="h5"
+    >
+      Selected option Label: 
+    </span>
+    <br />
+    <span
+      className="h5"
+    >
+      Selected option value: 
+    </span>
+  </div>
+</div>
+`;

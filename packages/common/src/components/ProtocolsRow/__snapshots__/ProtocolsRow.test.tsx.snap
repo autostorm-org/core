@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Protocols Row Test Should render Protocol Row component 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="root  "
+  >
+    <div
+      className="grid"
+    >
+      <div
+        className="textContainer"
+      >
+        <h2
+          className="textTitle"
+        >
+          <span
+            className="h3 textTitleOverride"
+          >
+            Find loans from BSC money market protocols
+          </span>
+        </h2>
+        <p
+          className="textDescription"
+        >
+          <span
+            className="p"
+          >
+            Compare available loans from multiple lending protocols on binance smart chain. Chose the best APY for your situation.
+          </span>
+        </p>
+        <div
+          className="logosContainer"
+        />
+      </div>
+      <div
+        className="illustrationContainer"
+      >
+        <img
+          alt="Supported cryptocurrencies to get an overcollateralized loan. BTC ETH "
+          onLoad={[Function]}
+          src="/day-theme-protocols-row.svg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <div
+          className="root"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

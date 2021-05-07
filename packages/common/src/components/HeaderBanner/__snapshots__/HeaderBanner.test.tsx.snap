@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBanner Test Should render HeaderBanner component 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="root  "
+  >
+    <div
+      className="flexContainer"
+    >
+      <div
+        className="headerBannerCardWrapper"
+      >
+        <div
+          className="headerBannerContainer"
+        >
+          <div
+            className="root bannerCardOverride"
+          >
+            <span
+              className="h1 titleOverride"
+            >
+              Crypto car loan finder
+            </span>
+            <br />
+            <span
+              className="p"
+            >
+              Get a collateralized loan for your next car purchase. Chose your backing assets. Powered by Multiplier.
+            </span>
+            <br />
+            <button
+              className="root buttonOverride"
+              disabled={false}
+            >
+              Find your car loan
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="carImage"
+      >
+        <img
+          alt="Car illustration"
+          className="headerBannerImage"
+          loading="lazy"
+          src="./carillustration.svg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

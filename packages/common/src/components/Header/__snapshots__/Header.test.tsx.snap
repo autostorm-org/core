@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Test Should render Header component 1`] = `
+<nav
+  aria-label="Autofica"
+  className="root "
+>
+  <div
+    className="root  "
+  >
+    <ul
+      className="menu"
+      role="menu"
+    >
+      <li
+        className="root leftOrCenterItem rightOrCenterItem  headerResponsiveLogo"
+      >
+        <a
+          href="/"
+          role="menuitem"
+        >
+          <img
+            alt="HEADER LOGO"
+            src="/autofica-defi-day-logo.svg"
+          />
+        </a>
+      </li>
+      <li
+        className="root desktopNavItem"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        role="none"
+      >
+        <a
+          className="content"
+          href="#"
+        >
+          Loan Manager
+          
+        </a>
+        
+      </li>
+      <li
+        className="root desktopNavItem"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        role="none"
+      >
+        <a
+          className="content"
+          href="#"
+        >
+          Whitepaper
+          
+        </a>
+        
+      </li>
+      <li
+        className="root desktopNavItem"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        role="none"
+      >
+        <a
+          className="content"
+        >
+          es-ES 
+          <img
+            alt="espanol"
+            className=""
+            height={13}
+            src="png-mock"
+            width={23}
+          />
+          
+        </a>
+        
+      </li>
+      <li
+        aria-label="Mobile navigation menu toggle"
+        className="root rightPositionedItem menuReponsiveIcon"
+        id="Mobile Menu"
+      >
+        <a
+          aria-expanded={false}
+          href="#"
+          onClick={[Function]}
+        >
+          <svg
+            fill="none"
+            height={24}
+            stroke="white"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="3"
+              x2="21"
+              y1="12"
+              y2="12"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <div
+      aria-labeledby="Mobile Menu"
+      className="root fullScreenMenyReponsive hiddenMenu"
+      role="menu"
+    >
+      <li
+        className="root"
+      >
+        <a
+          className="content"
+          href="#"
+        >
+          Loan Manager
+        </a>
+      </li>
+      <li
+        className="root"
+      >
+        <a
+          className="content"
+          href="#"
+        >
+          Whitepaper
+        </a>
+      </li>
+      <li
+        className="root"
+      >
+        <a
+          className="content"
+        >
+          es-ES 
+          <img
+            alt="espanol"
+            className=""
+            height={13}
+            src="png-mock"
+            width={23}
+          />
+        </a>
+      </li>
+    </div>
+  </div>
+</nav>
+`;

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Manager Row Test Should render Manager Row component 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="root  "
+  >
+    <div
+      className="grid"
+    >
+      <div
+        className="textContainer"
+      >
+        <h2
+          className="textTitle"
+        >
+          <span
+            className="h3 textTitleOverride"
+          >
+            Manage your loans.
+          </span>
+        </h2>
+        <p
+          className="textDescription"
+        >
+          <span
+            className="p"
+          >
+            Using the loan manager feature you can repay your loans, compute the remaining outstanding balance or withdraw your collateral once the loan is paid.
+          </span>
+        </p>
+        <div
+          className="logosContainer"
+        >
+          <button
+            className="root "
+            disabled={false}
+          >
+            Open loan dashboard
+          </button>
+        </div>
+      </div>
+      <div
+        className="illustrationContainer"
+      >
+        <img
+          alt="Manage your loans with the dashboard."
+          onLoad={[Function]}
+          src="/day-theme-manager-row.svg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <div
+          className="root"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

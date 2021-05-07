@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DealersRowStory Test Should render DealersRowStory component 1`] = `
+<div
+  className="root"
+>
+  <div
+    className="root  "
+  >
+    <div
+      className="grid"
+    >
+      <div
+        className="illustrationContainer"
+      >
+        <img
+          alt="Find cars from your local dealers. "
+          onLoad={[Function]}
+          src="/day-theme-dealers-row.svg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <div
+          className="root"
+        />
+      </div>
+      <div
+        className="textContainer"
+      >
+        <h2
+          className="textTitle"
+        >
+          <span
+            className="h3 textTitleOverride"
+          >
+            Find dealers that take crypto as payment.
+          </span>
+        </h2>
+        <p
+          className="textDescription"
+        >
+          <span
+            className="p"
+          >
+            Find a list of car dealerships that support payments in cryptocurrency. Arrange payment with these dealerships or ask your local dealers about crypto payments.
+          </span>
+        </p>
+        <div
+          className="logosContainer"
+        >
+          <button
+            className="root "
+            disabled={false}
+          >
+            Find car dealers
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

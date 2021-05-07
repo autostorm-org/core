@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions Row Test Should render Instructions Row component 1`] = `
+<div
+  className="root "
+>
+  <div
+    className="root  "
+  >
+    <div
+      className="instructionsWrapper"
+    >
+      <div
+        className="instructionGroup"
+      >
+        <div
+          className="circle"
+        >
+          <span
+            className="p circleText"
+          >
+            1
+          </span>
+        </div>
+        <span
+          className="p stepText"
+        >
+          Open the DAPP and connect a BSC wallet. and authorize the DAPP
+        </span>
+      </div>
+      <div
+        className="instructionGroup"
+      >
+        <div
+          className="circle"
+        >
+          <span
+            className="p circleText"
+          >
+            2
+          </span>
+        </div>
+        <span
+          className="p stepText"
+        >
+          Find loans with varying APY and chose the best for your situation.
+        </span>
+      </div>
+      <div
+        className="instructionGroup"
+      >
+        <div
+          className="circle"
+        >
+          <span
+            className="p circleText"
+          >
+            3
+          </span>
+        </div>
+        <span
+          className="p stepText"
+        >
+          Manage your loans and withdraw your collateral once paid
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

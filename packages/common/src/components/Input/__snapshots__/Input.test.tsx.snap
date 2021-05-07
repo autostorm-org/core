@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Test Should render Input component 1`] = `
+<div
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <span
+    className="h6"
+  >
+    Text input
+  </span>
+  <label
+    className="root "
+    htmlFor="text-input"
+  >
+    <input
+      autoComplete="off"
+      className="input"
+      id="text-input"
+      placeholder="Text input"
+      type="text"
+    />
+  </label>
+  <span
+    className="h6"
+  >
+    Number input
+  </span>
+  <label
+    className="root "
+    htmlFor="number-input"
+  >
+    <input
+      className="input"
+      id="number-input"
+      placeholder="Number input"
+      type="number"
+    />
+  </label>
+  <span
+    className="h6"
+  >
+    File input
+  </span>
+  <label
+    className="root "
+    htmlFor="file-input"
+  >
+    <input
+      className="input"
+      id="file-input"
+      placeholder="File input"
+      type="file"
+    />
+  </label>
+  <span
+    className="h6"
+  >
+    Email input
+  </span>
+  <label
+    className="root "
+    htmlFor="email-input"
+  >
+    <input
+      className="input"
+      id="email-input"
+      placeholder="Email input"
+      type="email"
+    />
+  </label>
+  <span
+    className="h6"
+  >
+    Date input
+  </span>
+  <label
+    className="root "
+    htmlFor="date-input"
+  >
+    <input
+      className="input"
+      id="date-input"
+      placeholder="Date input"
+      type="date"
+    />
+  </label>
+  <span
+    className="h6"
+  >
+    Tel input
+  </span>
+  <label
+    className="root "
+    htmlFor="tel-input"
+  >
+    <input
+      className="input"
+      id="tel-input"
+      placeholder="Tel input"
+      type="tel"
+    />
+  </label>
+  <span
+    className="h6"
+  >
+    Password input
+  </span>
+  <label
+    className="root "
+    htmlFor="password-input"
+  >
+    <input
+      className="input"
+      id="password-input"
+      type="password"
+    />
+  </label>
+</div>
+`;
