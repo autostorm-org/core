@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Button group Tests renders radio inputs 1`] = `
+<label
+  aria-checked={false}
+  className="root "
+  role="radio"
+>
+  <span
+    className="svgContainer"
+  >
+    <input
+      checked={false}
+      className="input"
+      name="Radio group"
+      onChange={[Function]}
+      type="radio"
+      value="test"
+    />
+    <svg-mock
+      className="outerCircle"
+    />
+    <svg-mock
+      className="overlay "
+    />
+  </span>
+</label>
+`;
+
+exports[`Radio Button group Tests renders renders a radio group 1`] = `
+Array [
+  <label
+    aria-checked={false}
+    className="root "
+    role="radio"
+  >
+    <span
+      className="svgContainer"
+    >
+      <input
+        checked={false}
+        className="input"
+        name="group"
+        onChange={[Function]}
+        type="radio"
+        value="a"
+      />
+      <svg-mock
+        className="outerCircle"
+      />
+      <svg-mock
+        className="overlay "
+      />
+    </span>
+  </label>,
+  <label
+    aria-checked={false}
+    className="root "
+    role="radio"
+  >
+    <span
+      className="svgContainer"
+    >
+      <input
+        checked={false}
+        className="input"
+        name="group"
+        onChange={[Function]}
+        type="radio"
+        value="b"
+      />
+      <svg-mock
+        className="outerCircle"
+      />
+      <svg-mock
+        className="overlay "
+      />
+    </span>
+  </label>,
+]
+`;

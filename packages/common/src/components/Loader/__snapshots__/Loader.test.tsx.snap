@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Test Should render Loader component 1`] = `
+<div
+  className="root"
+/>
+`;

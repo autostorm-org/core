@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PillButton Test Should render PillButton component 1`] = `
+<button
+  className="root "
+  onClick={[Function]}
+>
+  <img
+    alt="BSC logo"
+    className=""
+    height={22}
+    src="crypto-logos/bsc.svg"
+    style={
+      Object {
+        "marginRight": 10,
+      }
+    }
+    width={22}
+  />
+  BSC Mainnet
+</button>
+`;

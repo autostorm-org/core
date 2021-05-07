@@ -6,18 +6,21 @@ import type { IOverridable, IIdentifiable, IStylable } from "../../types";
 // Styles
 import styles from "./Typography.module.scss";
 
-interface ITypographyProps extends IOverridable, IIdentifiable, IStylable {
+interface ITypographyProps extends IIdentifiable, IStylable, IOverridable {
   variant: TypographyVariant_ENUM;
 }
 
 function Typography(props: React.PropsWithChildren<ITypographyProps>) {
-  const className = styles[props.variant];
-  const overrideClassName = props.override || "";
+  const className =
+    props.override != null
+      ? `${styles[props.variant]} ${props.override}`
+      : styles[props.variant];
   return (
-    <span className={`${className} ${overrideClassName}`} style={props.style}>
+    <span className={className} style={props.style}>
       {props.children}
     </span>
   );
 }
 export default Typography;
+export { TypographyVariant_ENUM };
 export type { ITypographyProps };
