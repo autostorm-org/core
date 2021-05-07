@@ -25,5 +25,5 @@
   },
   "include": ["src"],
   "baseUrl": ".",
-  "exclude": ["**/*.stories.tsx", "**/*.d.ts"]
+  "exclude": ["**/*.stories.tsx", "**/*.test.tsx", "**/*.d.ts"]
 }

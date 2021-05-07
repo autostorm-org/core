@@ -1,7 +1,7 @@
 import React from "react";
 import DashboardTemplate from "./DashboardTemplate";
 import { Typography, TypographyVariant_ENUM } from "../Typography";
-import Icon from "../Icon";
+import { Icon } from "../Icon";
 import { HeaderResponsive } from "../Header";
 import DashboardOptionsColumn from "./DashboardOptionsColumn";
 import DashboardOptionsItem from "./DashboardOptionsItem";

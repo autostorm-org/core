@@ -8,9 +8,10 @@ const nodeExternals = require("webpack-node-externals");
 module.exports = {
   // Entry points to the library
   entry: {
+    // "components/Button/index": "./src/components/Button/index.ts",
     index: "./src/index.ts",
-    "components/Button/index": "./src/components/Button/index.ts",
-    "components/Themeing/index": "./src/components/Themeing/index.ts",
+    "theme/day-theme": "./src/theme/day-theme.ts",
+    "theme/night-theme": "./src/theme/night-theme.ts",
   },
   // Rules for library file types
   module: {
@@ -38,6 +39,40 @@ module.exports = {
         options: {
           limit: 8192,
         },
+      },
+      {
+        test: /\.scss$/,
+        exclude: /.*theme\.scss$/,
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                compileType: "module",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+              },
+            },
+          },
+
+          "sass-loader",
+        ],
+        include: path.resolve(__dirname, "../"),
+      },
+      {
+        test: /.*theme\.scss$/,
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+
+          "sass-loader",
+        ],
+        include: path.resolve(__dirname, "../"),
       },
     ],
   },
