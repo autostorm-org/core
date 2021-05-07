@@ -1,9 +1,8 @@
-# Monorepo for all autofica repos
+# Autofica
 
-# SYSTEM variables
+# packages
 
-AUTOFICA_NODE_ENV: production, testing, development
-AUTOFICA_AUTH_SECRET: secret for authentication
-AUTOFICA_VERI_SECRET: secret for verify email
-AUTOFICA_RPWD_SECRET: secret for reset password
-AUTOFICA_AUTH_SWF: Salt work factor
+- components -> Components to implement multiple react based web apps.
+- dapp -> Main dapp coed
+- contracts -> Solidity smart contracts
+- sdk -> money market sdk to simplify usage of smartcontract in app
