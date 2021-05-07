@@ -48,7 +48,7 @@ module.exports = {
     path: path.resolve("./lib"),
     filename: "[name].js",
     library: {
-      name: "@autofica/common",
+      name: "@autofica/components",
       type: "umd",
     },
   },
