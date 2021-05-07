@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderResponsive from "./HeaderResponsive";
-import Icon from "../Icon";
+import { Icon } from "../Icon";
 import Spain from "../../assets/flags/Spain.png";
 
 export default {

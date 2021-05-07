@@ -21,5 +21,4 @@ function BoundedRow(props: React.PropsWithChildren<BoundedRowProps>) {
   );
 }
 export default BoundedRow;
-export { BoundedRow };
 export type { BoundedRowProps };

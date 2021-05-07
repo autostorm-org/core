@@ -1,2 +1,3 @@
-export { BoundedRow } from "./BoundedRow";
+// BoundedRow
+export { default as BoundedRow } from "./BoundedRow";
 export type { BoundedRowProps } from "./BoundedRow";

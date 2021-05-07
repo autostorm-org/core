@@ -1,1 +1,3 @@
-export const themeingClassName = "__AUTOFICA_THEME";
+const themeingClassName = "__AUTOFICA_THEME";
+
+export { themeingClassName };

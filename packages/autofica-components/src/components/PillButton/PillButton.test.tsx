@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import PillButton from "./PillButton";
-import Icon from "../Icon";
+import { Icon } from "../Icon";
 describe("PillButton Test", () => {
   it("Should render PillButton component", () => {
     const root = renderer.create(

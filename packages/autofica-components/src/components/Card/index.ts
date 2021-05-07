@@ -1,3 +1,3 @@
-export { Card } from "./Card";
+// Card
+export { default as Card } from "./Card";
 export type { CardPropsType } from "./Card";
-export { default } from "./Card";

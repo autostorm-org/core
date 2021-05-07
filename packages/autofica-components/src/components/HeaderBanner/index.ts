@@ -1,2 +1,2 @@
-export { default } from "./HeaderBanner";
+// HeaderBanner
 export { default as HeaderBanner } from "./HeaderBanner";

@@ -15,7 +15,7 @@ type RowButton = WithClassOverride<{
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }>;
 
-type ProtocolsRowProps = {
+type ManagerRowProps = {
   rowTitle: string;
   rowDescription: string;
   rowButtons: Array<RowButton>;
@@ -34,7 +34,7 @@ const ProtocolImage = () => {
   );
 };
 
-const ProtocolsRow = (props: ProtocolsRowProps) => {
+const ManagerRow = (props: ManagerRowProps) => {
   return (
     <div className={styles.root}>
       <BoundedRow>
@@ -72,5 +72,5 @@ const ProtocolsRow = (props: ProtocolsRowProps) => {
     </div>
   );
 };
-export default ProtocolsRow;
-export type { ProtocolsRowProps };
+export default ManagerRow;
+export type { ManagerRowProps };

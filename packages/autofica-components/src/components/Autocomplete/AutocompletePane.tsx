@@ -2,7 +2,6 @@ import React from "react";
 import type { IAutoCompleteOption } from "./Autocomplete.types";
 import type { IIdentifiable, IAriaLabel } from "../../types";
 import styles from "./AutocompletePane.module.scss";
-import { ProgressPlugin } from "webpack";
 
 interface AutocompletePaneProps extends IIdentifiable, IAriaLabel {
   options: Array<IAutoCompleteOption<HTMLLIElement>>;
