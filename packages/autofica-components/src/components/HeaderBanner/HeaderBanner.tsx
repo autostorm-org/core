@@ -2,7 +2,7 @@ import React from "react";
 import { BoundedRow } from "../BoundedRow";
 import { TypographyVariant_ENUM, Typography } from "../Typography";
 import { Button } from "../Button";
-import Card from "../Card";
+import { Card } from "../Card";
 import styles from "./HeaderBanner.module.scss";
 
 type HeaderBannerPropsType = {

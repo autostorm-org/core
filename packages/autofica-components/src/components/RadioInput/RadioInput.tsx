@@ -81,5 +81,4 @@ const RadioInput = React.forwardRef<HTMLLabelElement, IRadioInputProps>(
   }
 );
 export default RadioInput;
-export { RadioContext };
 export type { IRadioInputProps };

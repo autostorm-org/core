@@ -7,7 +7,7 @@ import type {
   IAriaLabel,
 } from "../../types";
 
-type InputType =
+type InputSupportedType =
   | "text"
   | "number"
   | "file"
@@ -24,7 +24,7 @@ interface InputProps
   iconLeft?: React.JSXElementConstructor<{}>;
   iconRight?: React.JSXElementConstructor<{}>;
   placeholder?: string;
-  type?: InputType;
+  type?: InputSupportedType;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
   onFocusCapture?: React.FocusEventHandler<HTMLInputElement>;
@@ -67,4 +67,4 @@ const Input = React.forwardRef<HTMLLabelElement, InputProps>((props, ref) => {
   );
 });
 export default React.memo(Input);
-export type { InputProps };
+export type { InputProps, InputSupportedType };

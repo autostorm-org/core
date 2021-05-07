@@ -15,7 +15,7 @@ type RowButton = WithClassOverride<{
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }>;
 
-type ProtocolsRowProps = {
+type DealersRowProps = {
   rowTitle: string;
   rowDescription: string;
   rowButtons: Array<RowButton>;
@@ -34,7 +34,7 @@ const ProtocolImage = () => {
   );
 };
 
-const ProtocolsRow = (props: ProtocolsRowProps) => {
+const DealersRow = (props: DealersRowProps) => {
   return (
     <div className={styles.root}>
       <BoundedRow>
@@ -71,5 +71,5 @@ const ProtocolsRow = (props: ProtocolsRowProps) => {
     </div>
   );
 };
-export default ProtocolsRow;
-export type { ProtocolsRowProps };
+export default DealersRow;
+export type { DealersRowProps };

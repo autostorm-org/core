@@ -5,7 +5,6 @@ export {
   DynamicThemeContext,
 } from "./DynamicTheme";
 export type { IDynamicThemeContext } from "./DynamicTheme";
-
 // Static Theme exports
 export {
   StaticThemeProvider,
@@ -13,9 +12,7 @@ export {
   StaticThemeContext,
 } from "./StaticTheme";
 export type { IStaticThemeContext } from "./StaticTheme";
-
-// Constancts
+// constants
 export { themeingClassName } from "./constants";
-
 // Types
 export type { StaticTheme, DynamicTheme } from "./types";
