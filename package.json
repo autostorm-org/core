@@ -15,10 +15,7 @@
     "prettier": "^2.1.2"
   },
   "scripts": {
-    "storybook": "cd packages/common && yarn storybook",
-    "dev": "pm2 start ecosystem.config.js",
-    "status": "pm2 status",
-    "delete": "pm2 delete all"
+    "storybook": "cd packages/common && yarn storybook"
   },
   "workspaces": {
     "packages": [
@@ -26,10 +23,6 @@
       "services/*"
     ],
     "nohoist": [
-      "**/@nestjs",
-      "**/@nestjs/**",
-      "**/@types/jasmine",
-      "**/@types/jasmine/**",
       "**/jest/**",
       "**/jest",
       "**/@types/jest/**",
@@ -40,19 +33,11 @@
       "**/@storybook",
       "**/prettier/**",
       "**/prettier",
-      "**/rsmq-promise/**",
-      "**/rsmq-promise",
-      "**/graphql-fields/**",
-      "**/graphql-fields",
-      "**/babel-jest/**",
-      "**/babel-jest",
       "**/@storybook/cli",
       "**/@storybook/cli/**",
       "**/typescript-plugin-css-modules",
       "**/typescript-plugin-css-modules/**"
     ]
   },
-  "resolutions": {
-    "graphql": "15.4.0"
-  }
+  "resolutions": {}
 }
