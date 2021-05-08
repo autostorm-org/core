@@ -8,7 +8,7 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "build": "rimraf build && tsc",
-    "prepare": "ts-node ./scripts/prepare.ts",
+    "postinstall": "ts-node ./scripts/prepare.ts",
     "test": "cross-env NODE_ENV=test jest ./test"
   },
   "devDependencies": {
