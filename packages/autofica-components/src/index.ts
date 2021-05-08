@@ -1,3 +1,4 @@
+import "./theme/variables.scss";
 export * from "./components/Autocomplete";
 export * from "./components/BoundedRow";
 export * from "./components/Button";

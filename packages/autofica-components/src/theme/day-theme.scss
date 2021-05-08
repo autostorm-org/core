@@ -1,6 +1,6 @@
 :global(.day) {
   /* General */
-  --backdrop-background-color:#fff
+  --backdrop-background-color: #fff;
 
   /* Button */
   --button-background-color: var(--primary-main);
@@ -103,14 +103,15 @@
   /* Dashboard Option */
   --dashboard-option-col-background-color: var(--white-main);
   --dashboard-option-col-item-background-color: var(--white-main);
-  --dashboard-option-col-item-background-color-active-element: var(--gray-light);
+  --dashboard-option-col-item-background-color-active-element: var(
+    --gray-light
+  );
   --dashboard-option-col-item-background-color-hover: var(--gray-light);
   --dashboard-option-col-item-color: #000;
   --dashboard-option-col-item-font-family: var(--font-family-secondary);
   --dashboard-option-col-item-background-shadow-color: var(--aux-gray-1);
   --dashboard-option-box-shadow-color: var(--gray-main);
   --dashboard-option-box-border-right-color-active-element: var(--primary-main);
-
 
   /* Pill Button */
   --pill-button-background-color: var(--white-main);
@@ -120,18 +121,21 @@
   --pill-button-font-weight: var(--font-weight-bold);
   --pill-button-color: #000;
   --pill-button-box-shadow-color: var(--aux-gray-1);
-  
+
   /* Modal*/
   --modal-background-color: var(--dark-dark);
   --modal-opacity: 0.8;
   /* IconButton*/
-  --icon-button-color:#000;
-  --icon-button-color-disabled:var(--gray-light);;
+  --icon-button-color: #000;
+  --icon-button-color-disabled: var(--gray-light);
   /* Radio Input */
 
-  --radio-input-filter-checked: invert(12%) sepia(26%) saturate(7367%) hue-rotate(215deg) brightness(89%) contrast(109%);
-  --radio-input-fitler-unchecked: invert(17%) sepia(10%) saturate(818%) hue-rotate(175deg) brightness(95%) contrast(85%);
-  --radio-input-fitler-disabled: invert(17%) sepia(10%) saturate(818%) hue-rotate(175deg) brightness(95%) contrast(85%) opacity(70%);
-  --radio-input-filter-checked-disabled: invert(12%) sepia(26%) saturate(7367%) hue-rotate(215deg) brightness(89%) contrast(109%) opacity(60%);
-
+  --radio-input-filter-checked: invert(12%) sepia(26%) saturate(7367%)
+    hue-rotate(215deg) brightness(89%) contrast(109%);
+  --radio-input-fitler-unchecked: invert(17%) sepia(10%) saturate(818%)
+    hue-rotate(175deg) brightness(95%) contrast(85%);
+  --radio-input-fitler-disabled: invert(17%) sepia(10%) saturate(818%)
+    hue-rotate(175deg) brightness(95%) contrast(85%) opacity(70%);
+  --radio-input-filter-checked-disabled: invert(12%) sepia(26%) saturate(7367%)
+    hue-rotate(215deg) brightness(89%) contrast(109%) opacity(60%);
 }
