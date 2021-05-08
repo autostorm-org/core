@@ -5,6 +5,8 @@ const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin"
 const TsDeclarationWebpackPlugin = require("ts-declaration-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require("webpack-node-externals");
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
   // Entry points to the library
   entry: {
@@ -101,6 +103,18 @@ module.exports = {
     //   name: "index.d.ts", // Not required, '[name].d.ts' by default (to match output fileName)
     // }),
     new MiniCssExtractPlugin({}),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "./src/theme/variables.scss"),
+          to: path.resolve(__dirname, "./lib/theme/variables.scss"),
+        },
+        {
+          from: path.resolve(__dirname, "./src/theme/constants.scss"),
+          to: path.resolve(__dirname, "./lib/theme/constants.scss"),
+        },
+      ],
+    }),
   ],
   mode: "development",
   optimization: {
