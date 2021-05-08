@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Checkout submodules # checkout rest
+      - name: Run tests # checkout rest
         shell: bash
         run: |
           # Replace ssh for https for actions
@@ -32,9 +32,5 @@ jobs:
           auth_header="$(git config --local --get http.https://github.com/.extraheader)"
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
           yarn
           sh ./scripts/test.sh
