@@ -1,0 +1,3 @@
+interface IMoneyMarket {
+  getContractAddress: () => void;
+}

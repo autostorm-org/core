@@ -2,13 +2,13 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,9 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Run tests # checkout rest
+        shell: bash
         run: |
+          # Replace ssh for https for actions
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
           yarn
-          cd packages/autofica-components && yarn install && yarn test && yarn build
+          sh ./scripts/test.sh

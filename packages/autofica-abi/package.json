@@ -1,0 +1,28 @@
+{
+  "name": "@autofica/abi",
+  "version": "1.0.0",
+  "description": "ABI definitions for all smartcontracts used in the repo",
+  "main": "build/index.js",
+  "repository": "https://www.github.com/autofica/core",
+  "author": "carlosballadares",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "postinstall": "ts-node ./scripts/prepare.ts",
+    "test": "cross-env NODE_ENV=test jest ./test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-typescript": "^7.12.17",
+    "@types/jest": "^26.0.20",
+    "cross-env": "^7.0.3",
+    "jest": "^26.6.3",
+    "prettier": "2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "4.1.5"
+  },
+  "dependencies": {
+    "@makerdao/dai": "^0.32.11"
+  }
+}
