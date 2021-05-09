@@ -1,21 +1,17 @@
 {
   "name": "autofica",
   "version": "1.0.0",
-  "description": "Tools for car dealers/ concessionaries",
+  "description": "Tools for crypto",
   "main": "index.js",
   "author": "Carlos Balladares",
   "license": "Proprietary",
   "private": true,
   "devDependencies": {
-    "@types/gulp": "^4.0.7",
-    "expo-yarn-workspaces": "^1.2.1",
-    "gulp": "^4.0.2",
     "lerna": "^3.20.2",
-    "pm2": "^4.5.0",
     "prettier": "^2.1.2"
   },
   "scripts": {
-    "storybook": "cd packages/common && yarn storybook"
+    "storybook": "cd packages/autofica-components && yarn storybook"
   },
   "workspaces": {
     "packages": [
@@ -36,7 +32,9 @@
       "**/@storybook/cli",
       "**/@storybook/cli/**",
       "**/typescript-plugin-css-modules",
-      "**/typescript-plugin-css-modules/**"
+      "**/typescript-plugin-css-modules/**",
+      "**/@typechain/ethers-v5",
+      "**/@typechain/ethers-v5/**"
     ]
   },
   "resolutions": {}

@@ -1,18 +1,24 @@
 // Import the ABIs,
-import LendingPoolAddressesProviderABI from "./LendingPoolAddressesProvider.json";
-import LendingPoolABI from "./LendingPool.json";
+import { LendingPoolAddressesProvider__factory } from "@autofica/abi";
+import { utils, ethers } from "ethers";
 
-// Retrieve the LendingPool address
-const lpAddressProviderAddress = 0xcc0479a98cc66e85806d0cd7970d6e07f77fd633; // mainnet address
-const lpAddressProviderContract = new web3.eth.Contract(
-  LendingPoolAddressesProviderABI,
-  lpAddressProviderAddress
+// Retrieve // Retrieve the LendingPool address
+const lpAddressProviderAddress = "0xCc0479a98cC66E85806D0Cd7970d6e07f77Fd633"; // mainnet address
+
+const BSC_RPC = "https://bsc-dataseed1.defibit.io";
+const provider = new ethers.providers.JsonRpcProvider(BSC_RPC);
+
+const lendingPoolAddressProviderContract = LendingPoolAddressesProvider__factory.connect(
+  lpAddressProviderAddress,
+  provider
 );
 
 // Get the latest LendingPool contract address
-const lpAddress = await lpAddressProviderContract.methods
-  .getLendingPool()
-  .call()
-  .catch((e) => {
-    throw Error(`Error getting lendingPool address: ${e.message}`);
-  });
+(async () => {
+  try {
+    const address = await lendingPoolAddressProviderContract.getLendingPool();
+    console.log(address);
+  } catch (e) {
+    console.error(e);
+  }
+})();
