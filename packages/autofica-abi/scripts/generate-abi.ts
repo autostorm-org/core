@@ -1,8 +1,11 @@
 import fs from "fs";
 import path from "path";
+import config from "../config.json";
+
 const generateMultiplierAbi = async (): Promise<void> => {
+  const abiSet = new Set(config.include);
   try {
-    const dir = path.resolve(__dirname, "../src/gen-abi/multiplier");
+    const dir = path.resolve(__dirname, "../src/abi/gen/multiplier");
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
@@ -15,7 +18,9 @@ const generateMultiplierAbi = async (): Promise<void> => {
         `../MCL-SmartContracts/lending/build/contracts/${file}`
       );
       const dstPath = `${dir}/${file}`;
-      await fs.promises.copyFile(srcPath, dstPath);
+      if (abiSet.has(file)) {
+        await fs.promises.copyFile(srcPath, dstPath);
+      }
     }
   } catch (e) {
     console.error(e);
