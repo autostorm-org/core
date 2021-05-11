@@ -20,12 +20,20 @@ import {
   Key,
   AlertTriangle,
 } from "react-feather";
-
+import {
+  MultiplierProvider,
+  useWallet,
+  useLendingPoolAddressProvider,
+  SupportedNetworks,
+  useLendingPool,
+  useAsyncValue,
+} from "@autofica/multiplier-sdk";
 import styles from "./styles.module.scss";
 import "@autofica/components/lib/index.css";
 import "@autofica/components/lib/theme/day-theme.css";
 import "@autofica/components/lib/theme/night-theme.css";
 
+// eslint-disable-next-line
 const ThemeChanger = () => {
   const themer = useStaticThemeContext();
 
@@ -57,7 +65,7 @@ const AlertTriangleButton = () => {
   }, [state]);
   return (
     <PillButton override={styles.buttonOverride} onClick={onClick}>
-      {state % 3 == 0 ? (
+      {state % 3 === 0 ? (
         <>
           <AlertTriangle
             height={22}
@@ -67,7 +75,7 @@ const AlertTriangleButton = () => {
 
           <span className={styles.walletText}>Not connected</span>
         </>
-      ) : state % 3 == 1 ? (
+      ) : state % 3 === 1 ? (
         <>
           <Icon
             src={"/crypto-logos/bsc.svg"}
@@ -95,65 +103,84 @@ const AlertTriangleButton = () => {
     </PillButton>
   );
 };
+
+function MainContent() {
+  const wallet = useWallet();
+  const lp = useLendingPool();
+  const userAccountData = useAsyncValue(() => {
+    return lp.contract?.getUserAccountData(wallet.account ?? "");
+  }, [wallet.account, lp.contract == null]);
+  console.log(userAccountData);
+
+  return (
+    <div>
+      <Typography variant={TypographyVariant_ENUM.h3} style={{ padding: 30 }}>
+        connected {wallet.connected && "CONNECTED"}
+        connected {wallet.connecting && "CONNECTING"}
+      </Typography>
+      <Button onClick={() => wallet.connect("bsc")}>
+        Connect to BSC Wallet
+      </Button>
+
+      <Typography variant={TypographyVariant_ENUM.h3} style={{ padding: 30 }}>
+        {wallet.account}
+      </Typography>
+    </div>
+  );
+}
+
 function App() {
   return (
-    <StaticThemeProvider initialTheme={{ name: "night" }}>
-      <HeaderResponsive
-        fullWidth
-        options={[
-          { content: "Loan Manager", href: "#" },
-          { content: "Whitepaper", href: "#" },
-        ]}
-      />
-      <>
-        <div>
-          <DashboardTemplate
-            mainContent={
-              <div>
-                <Typography
-                  variant={TypographyVariant_ENUM.h3}
-                  style={{ padding: 30 }}
-                >
-                  Main Content
-                </Typography>
-              </div>
-            }
-            optionsContent={
-              <>
-                <DashboardOptionsColumn>
-                  <div className={styles.buttonContainer}>
-                    <AlertTriangleButton />
-                  </div>
+    <MultiplierProvider chainId={SupportedNetworks.MAINNET}>
+      <StaticThemeProvider initialTheme={{ name: "day" }}>
+        <HeaderResponsive
+          fullWidth
+          options={[
+            { content: "Loan Manager", href: "#" },
+            { content: "Whitepaper", href: "#" },
+          ]}
+        />
+        <>
+          <div>
+            <DashboardTemplate
+              mainContent={<MainContent />}
+              optionsContent={
+                <>
+                  <DashboardOptionsColumn>
+                    <div className={styles.buttonContainer}>
+                      <AlertTriangleButton />
+                    </div>
 
-                  <DashboardOptionsItem href={"#"} activeElement>
-                    <Eye />
-                    <span className={styles.optionText}>Loans Overview</span>
-                  </DashboardOptionsItem>
-                  <DashboardOptionsItem href={"#"}>
-                    <ArrowLeftCircle />
-                    <span className={styles.optionText}>Borrow</span>
-                  </DashboardOptionsItem>
-                  <DashboardOptionsItem href={"#"}>
-                    <DollarSign />
-                    <span className={styles.optionText}>Payback</span>
-                  </DashboardOptionsItem>
-                  <DashboardOptionsItem href={"#"}>
-                    <ArrowUp />
-                    <span className={styles.optionText}>
-                      Withdraw Collateral
-                    </span>
-                  </DashboardOptionsItem>
-                  <DashboardOptionsItem href={"#"}>
-                    <Key />
-                    <span className={styles.optionText}>Deposit</span>
-                  </DashboardOptionsItem>
-                </DashboardOptionsColumn>
-              </>
-            }
-          />
-        </div>
-      </>
-    </StaticThemeProvider>
+                    <DashboardOptionsItem href={"#"} activeElement>
+                      <Eye />
+                      <span className={styles.optionText}>Loans Overview</span>
+                    </DashboardOptionsItem>
+                    <DashboardOptionsItem href={"#"}>
+                      <ArrowLeftCircle />
+                      <span className={styles.optionText}>Borrow</span>
+                    </DashboardOptionsItem>
+                    <DashboardOptionsItem href={"#"}>
+                      <DollarSign />
+                      <span className={styles.optionText}>Payback</span>
+                    </DashboardOptionsItem>
+                    <DashboardOptionsItem href={"#"}>
+                      <ArrowUp />
+                      <span className={styles.optionText}>
+                        Withdraw Collateral
+                      </span>
+                    </DashboardOptionsItem>
+                    <DashboardOptionsItem href={"#"}>
+                      <Key />
+                      <span className={styles.optionText}>Deposit</span>
+                    </DashboardOptionsItem>
+                  </DashboardOptionsColumn>
+                </>
+              }
+            />
+          </div>
+        </>
+      </StaticThemeProvider>
+    </MultiplierProvider>
   );
 }
 
