@@ -34,7 +34,9 @@
       "**/typescript-plugin-css-modules",
       "**/typescript-plugin-css-modules/**",
       "**/@typechain/ethers-v5",
-      "**/@typechain/ethers-v5/**"
+      "**/@typechain/ethers-v5/**",
+      "**/rimraf",
+      "**/rimraf/**"
     ]
   },
   "resolutions": {}
