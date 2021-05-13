@@ -77872,3 +77872,263 @@ Array [
   },
 ]
 `;
+
+exports[`Test correct abis were imported Static contracts abis match snapshots 2`] = `
+Array [
+  Object {
+    "anonymous": false,
+    "inputs": Array [
+      Object {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address",
+      },
+      Object {
+        "indexed": true,
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+      },
+      Object {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256",
+      },
+    ],
+    "name": "Approval",
+    "type": "event",
+  },
+  Object {
+    "anonymous": false,
+    "inputs": Array [
+      Object {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address",
+      },
+      Object {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+      },
+      Object {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256",
+      },
+    ],
+    "name": "Transfer",
+    "type": "event",
+  },
+  Object {
+    "constant": true,
+    "inputs": Array [
+      Object {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address",
+      },
+      Object {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+      },
+    ],
+    "name": "allowance",
+    "outputs": Array [
+      Object {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+  },
+  Object {
+    "constant": false,
+    "inputs": Array [
+      Object {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+      },
+      Object {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256",
+      },
+    ],
+    "name": "approve",
+    "outputs": Array [
+      Object {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+  },
+  Object {
+    "constant": true,
+    "inputs": Array [
+      Object {
+        "internalType": "address",
+        "name": "account",
+        "type": "address",
+      },
+    ],
+    "name": "balanceOf",
+    "outputs": Array [
+      Object {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+  },
+  Object {
+    "constant": true,
+    "inputs": Array [],
+    "name": "decimals",
+    "outputs": Array [
+      Object {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+  },
+  Object {
+    "constant": true,
+    "inputs": Array [],
+    "name": "getOwner",
+    "outputs": Array [
+      Object {
+        "internalType": "address",
+        "name": "",
+        "type": "address",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+  },
+  Object {
+    "constant": true,
+    "inputs": Array [],
+    "name": "name",
+    "outputs": Array [
+      Object {
+        "internalType": "string",
+        "name": "",
+        "type": "string",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+  },
+  Object {
+    "constant": true,
+    "inputs": Array [],
+    "name": "symbol",
+    "outputs": Array [
+      Object {
+        "internalType": "string",
+        "name": "",
+        "type": "string",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+  },
+  Object {
+    "constant": true,
+    "inputs": Array [],
+    "name": "totalSupply",
+    "outputs": Array [
+      Object {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+  },
+  Object {
+    "constant": false,
+    "inputs": Array [
+      Object {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address",
+      },
+      Object {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256",
+      },
+    ],
+    "name": "transfer",
+    "outputs": Array [
+      Object {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+  },
+  Object {
+    "constant": false,
+    "inputs": Array [
+      Object {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address",
+      },
+      Object {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address",
+      },
+      Object {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256",
+      },
+    ],
+    "name": "transferFrom",
+    "outputs": Array [
+      Object {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool",
+      },
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+  },
+]
+`;
