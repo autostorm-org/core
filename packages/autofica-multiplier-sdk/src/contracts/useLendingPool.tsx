@@ -12,7 +12,7 @@ interface IUseLendingPool
   readonly connecting: boolean;
 }
 
-const useLendingPool = (): IUseLendingPool => {
+const useLendingPool = (writable?: boolean): IUseLendingPool => {
   const wallet = useWallet();
   const lendingPoolAddressProviderContract = useLendingPoolAddressProvider();
   const lendingPoolAddressProviderResult = useAsyncValue(() => {
@@ -32,7 +32,7 @@ const useLendingPool = (): IUseLendingPool => {
   return {
     contract: LendingPool__factory.connect(
       lendingPoolAddressProviderResult.value,
-      wallet.provider
+      writable ? wallet.provider.getSigner() : wallet.provider
     ),
     connected: wallet.connected,
     connecting: wallet.connecting,
