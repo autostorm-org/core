@@ -1,5 +1,10 @@
 import "jest";
-import { LendingPoolAddressesProvider, LendingPool, BSCDAI } from "../src";
+import {
+  LendingPoolAddressesProvider,
+  LendingPool,
+  BSCDAI,
+  BEP20,
+} from "../src";
 
 describe(`Test correct abis were imported`, () => {
   test("Generated contracts abis match snapshots", async () => {
@@ -9,5 +14,6 @@ describe(`Test correct abis were imported`, () => {
 
   test("Static contracts abis match snapshots", async () => {
     expect(BSCDAI).toMatchSnapshot();
+    expect(BEP20).toMatchSnapshot();
   });
 });

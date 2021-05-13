@@ -7,6 +7,7 @@
   "author": "carlosballadares",
   "license": "GPL-3.0-or-later",
   "scripts": {
+    "build:gen": "yarn generate-types && yarn build",
     "build": "rimraf build && tsc && ts-node ./scripts/post-build.ts",
     "postinstall": "yarn generate-types",
     "test": "cross-env NODE_ENV=test jest ./test",
