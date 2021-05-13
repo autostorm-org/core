@@ -14,10 +14,8 @@ export interface IMultiplerViewMethod<T> extends IMultiplerSdkBase {
   readonly evaluated: boolean;
 }
 
-export interface IMultiplierMutationMethod<T> {
-  method: () => Promise<T>;
-  value: T;
-  evaluated: boolean;
+export interface IMultiplierWritableMethod<T> extends IMultiplerSdkBase {
+  readonly method: T | null;
 }
 
 export type Await<T> = T extends PromiseLike<infer U> ? U : T;
