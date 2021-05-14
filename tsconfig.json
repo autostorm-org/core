@@ -29,5 +29,6 @@
     "forceConsistentCasingInFileNames": true,
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */
   },
-  "resolveJsonModule": true
+  "resolveJsonModule": true,
+  "types": ["node", "jest"]
 }

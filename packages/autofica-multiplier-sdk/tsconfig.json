@@ -68,6 +68,6 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   /*Additions*/
-  "exclude": ["./MCL-SmartContracts", "test", "scripts"],
+  "exclude": ["./MCL-SmartContracts", "scripts"],
   "include": ["./globals.d.ts", "src"]
 }
