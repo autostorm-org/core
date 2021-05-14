@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import config from "../config.json";
 
 const generateMultiplierAbi = async (): Promise<void> => {
+  const config: { include: string[] } = require("../config.json");
   const abiSet = new Set(config.include);
   try {
     const dir = path.resolve(__dirname, "../src/abi/gen/multiplier");
@@ -10,12 +10,17 @@ const generateMultiplierAbi = async (): Promise<void> => {
       fs.mkdirSync(dir, { recursive: true });
     }
     const files = await fs.promises.readdir(
-      path.resolve(__dirname, "../MCL-SmartContracts/lending/build/contracts")
+      path.resolve(
+        __dirname,
+        "../../MCL-SmartContracts/lending/build/contracts"
+      )
     );
+    console.log("FILES");
+    console.log(files);
     for (const file of files) {
       const srcPath = path.resolve(
         __dirname,
-        `../MCL-SmartContracts/lending/build/contracts/${file}`
+        `../../MCL-SmartContracts/lending/build/contracts/${file}`
       );
       const dstPath = `${dir}/${file}`;
       if (abiSet.has(file)) {
