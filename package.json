@@ -7,6 +7,7 @@
   "license": "Proprietary",
   "private": true,
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "lerna": "^3.20.2",
     "prettier": "^2.1.2"
   },
@@ -15,29 +16,12 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*",
+      "packages/autofica-abi",
+      "packages/autofica-components",
+      "packages/autofica-contracts",
+      "packages/autofica-dapp",
+      "packages/autofica-multiplier-sdk",
       "services/*"
-    ],
-    "nohoist": [
-      "**/jest/**",
-      "**/jest",
-      "**/@types/jest/**",
-      "**/@types/jest",
-      "**/webpack/**",
-      "**/webpack",
-      "**/@storybook/**",
-      "**/@storybook",
-      "**/prettier/**",
-      "**/prettier",
-      "**/@storybook/cli",
-      "**/@storybook/cli/**",
-      "**/typescript-plugin-css-modules",
-      "**/typescript-plugin-css-modules/**",
-      "**/@typechain/ethers-v5",
-      "**/@typechain/ethers-v5/**",
-      "**/rimraf",
-      "**/rimraf/**"
     ]
-  },
-  "resolutions": {}
+  }
 }

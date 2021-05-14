@@ -4,3 +4,4 @@ src/gen-abi
 src/gen-types
 src/abi/gen
 coverage
+ethers-v5

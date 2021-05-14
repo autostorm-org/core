@@ -1,4 +1,4 @@
 [submodule "packages/autofica-abi/MCL-SmartContracts"]
-	path = packages/autofica-abi/MCL-SmartContracts
+	path = packages/MCL-SmartContracts
 	url = git@github.com:Multiplier-Finance/MCL-SmartContracts.git
 	branch = main
