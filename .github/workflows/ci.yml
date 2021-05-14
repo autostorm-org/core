@@ -34,3 +34,8 @@ jobs:
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
           yarn
           sh ./scripts/test.sh
+              - name: Archive code coverage results
+      - uses: actions/upload-artifact@v2
+      - with:
+          name: error-logs
+          path: /tmp/
