@@ -52,7 +52,6 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.scss$/,
-      exclude: /.*theme\.scss$/,
       use: [
         "style-loader",
         {
@@ -62,22 +61,6 @@ module.exports = {
               compileType: "module",
               localIdentName: "[path][name]__[local]--[hash:base64:5]",
             },
-          },
-        },
-
-        "sass-loader",
-      ],
-      include: path.resolve(__dirname, "../"),
-    });
-
-    config.module.rules.push({
-      test: /.*theme\.scss$/,
-      use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            modules: false,
           },
         },
 
