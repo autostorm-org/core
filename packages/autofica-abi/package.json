@@ -9,22 +9,28 @@
   "scripts": {
     "build:gen": "yarn generate-types && yarn build",
     "build": "rimraf build && tsc && ts-node ./scripts/post-build.ts",
-    "postinstall": "yarn generate-types",
+    "postinstall": "rimraf ethers-v5 && mkdir -p ethers-v5 && cp -r node_modules/@typechain/ethers-v5/* ethers-v5/ && yarn generate-types",
     "test": "cross-env NODE_ENV=test jest ./test",
-    "generate-types": "rimraf src/abi/gen && ts-node ./scripts/generate-abi.ts && typechain --outDir src/gen-types --target=ethers-v5 'src/abi/**/*.json'"
+    "generate-types": "rimraf src/abi/gen && ts-node ./scripts/generate-abi.ts && typechain --outDir src/gen-types --target=ethers-v5 'src/abi/**/*.json' --show-stack-traces"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
     "@babel/preset-typescript": "^7.12.17",
-    "@typechain/ethers-v5": "^6.0.5",
+    "@typechain/ethers-v5": "^6.0.1",
     "@types/jest": "^26.0.20",
+    "@types/node": "^15.0.3",
     "cross-env": "^7.0.3",
     "ethers": "^5.1.4",
     "jest": "^26.6.3",
+    "lodash": "^4.17.21",
     "prettier": "2.2.1",
+    "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
-    "typechain": "^4.0.3",
-    "typescript": "4.1.5"
+    "typechain": "^4.0.2",
+    "typescript": "4.2.2"
+  },
+  "dependencies": {
+    "ethers": "^5.0.31"
   }
 }
