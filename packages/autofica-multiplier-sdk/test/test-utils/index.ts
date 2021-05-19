@@ -27,30 +27,6 @@ const testGasLimit = ethers.BigNumber.from(
   web3.utils.toWei("1000000", "wei").toString()
 );
 
-class NonceOffsetManager {
-  private offset = 0;
-  private hasBeenSet = false;
-
-  increase = () => {
-    this.offset += 1;
-  };
-  getNonceOffset = () => {
-    return this.offset;
-  };
-  setNonceOffset = (nonce: number) => {
-    if (this.hasBeenSet == false) {
-      this.offset = nonce;
-      this.hasBeenSet = true;
-    }
-  };
-
-  hasNonceBeenSet = () => {
-    return this.hasBeenSet;
-  };
-}
-
-const nonceOffsetManager = new NonceOffsetManager();
-
 export {
   getTestNetURL,
   BSC_TESTNET_ENDPOINTS,
@@ -58,5 +34,4 @@ export {
   errorLog,
   delay,
   testGasLimit,
-  nonceOffsetManager,
 };

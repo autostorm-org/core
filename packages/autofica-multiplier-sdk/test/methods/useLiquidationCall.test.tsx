@@ -8,7 +8,7 @@ import {
   parseChainId,
   Contracts,
 } from "../../src";
-import { delay, successLog, errorLog, nonceOffsetManager } from "../test-utils";
+import { delay, successLog, errorLog } from "../test-utils";
 import web3 from "web3";
 import { ethers } from "ethers";
 
@@ -41,16 +41,6 @@ const App = () => {
       <button
         data-testid="liquidation-call-button"
         onClick={async () => {
-          if (!nonceOffsetManager.hasNonceBeenSet() && wallet.account != null) {
-            const nonce = await wallet.provider?.getTransactionCount(
-              wallet.account
-            );
-            nonceOffsetManager.setNonceOffset(nonce ?? 0);
-          }
-
-          const nonce = nonceOffsetManager.getNonceOffset();
-          nonceOffsetManager.increase();
-
           liquidationCallMethod(
             knownContracts.BNB,
             knownContracts.BNB,
@@ -62,7 +52,6 @@ const App = () => {
                 web3.utils.toWei("10000000", "wei").toString()
               ),
               value: web3.utils.toWei("0.01", "ether").toString(),
-              nonce,
             }
           )
             .then((a) => {

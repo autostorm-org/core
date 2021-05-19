@@ -8,7 +8,7 @@ import {
   parseChainId,
   Contracts,
 } from "../../src";
-import { successLog, errorLog, nonceOffsetManager, delay } from "../test-utils";
+import { successLog, errorLog, delay } from "../test-utils";
 import web3 from "web3";
 import { ethers } from "ethers";
 
@@ -41,16 +41,6 @@ const App = () => {
       <button
         data-testid="deposit-button"
         onClick={async () => {
-          if (!nonceOffsetManager.hasNonceBeenSet() && wallet.account != null) {
-            const nonce = await wallet.provider?.getTransactionCount(
-              wallet.account
-            );
-            nonceOffsetManager.setNonceOffset(nonce ?? 0);
-          }
-
-          const nonce = nonceOffsetManager.getNonceOffset();
-          nonceOffsetManager.increase();
-
           depositMethod(
             knownContracts.BNB,
             web3.utils.toWei("0.01", "ether").toString(),
@@ -60,7 +50,6 @@ const App = () => {
                 web3.utils.toWei("10000000", "wei").toString()
               ),
               value: web3.utils.toWei("0.01", "ether").toString(),
-              nonce,
             }
           )
             .then((a) => {
@@ -108,7 +97,7 @@ describe("useLendingPool Tests", () => {
       depositBtn?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
       await wrapper.findByTestId("deposit-container");
 
-      await delay(15000);
+      await delay(20000);
 
       // Assert that deposit transaction was successfully sent.
 
