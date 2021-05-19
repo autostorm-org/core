@@ -29,8 +29,5 @@
       "packages/autofica-deprem",
       "services/*"
     ]
-  },
-  "resolutions": {
-    "@autofica/abi": "portal:/home/ubuntu/autofica/core/packages/autofica-abi"
   }
 }

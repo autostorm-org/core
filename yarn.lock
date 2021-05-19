@@ -16,30 +16,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@autofica/abi@portal:/home/ubuntu/autofica/core/packages/autofica-abi::locator=autofica%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@autofica/abi@portal:/home/ubuntu/autofica/core/packages/autofica-abi::locator=autofica%40workspace%3A."
-  dependencies:
-    "@ethersproject/abi": ^5.1.2
-    "@ethersproject/providers": ^5.1.2
-    "@typechain/ethers-v5": 7.0.0
-    "@types/jest": 26.0.23
-    "@types/node": ^15.0.3
-    cross-env: ^7.0.3
-    jest: 26.6.0
-    lodash: ^4.17.21
-    mkdirp: ^1.0.4
-    prettier: 2.2.1
-    ts-jest: ^26.5.6
-    ts-node: ^9.1.1
-    typechain: 5.0.0
-    typescript: 4.2.2
-  peerDependencies:
-    ethers: 5.1.4
-  languageName: node
-  linkType: soft
-
-"@autofica/abi@workspace:packages/autofica-abi":
+"@autofica/abi@1.0.0, @autofica/abi@workspace:packages/autofica-abi":
   version: 0.0.0-use.local
   resolution: "@autofica/abi@workspace:packages/autofica-abi"
   dependencies:
@@ -53,6 +30,7 @@ __metadata:
     lodash: ^4.17.21
     mkdirp: ^1.0.4
     prettier: 2.2.1
+    rimraf: ^3.0.2
     ts-jest: ^26.5.6
     ts-node: ^9.1.1
     typechain: 5.0.0
