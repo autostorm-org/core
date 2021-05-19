@@ -1,0 +1,29 @@
+{
+  "name": "@autofica/deprem",
+  "version": "1.0.0",
+  "description": "Tool to remove peer dependencies",
+  "main": "build/index.js",
+  "bin": "bin/index.js",
+  "repository": "https://www.github.com/autofica/core",
+  "author": "carlosballadares",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "build": "rimraf build && tsc -p tsconfig.build.json && deprem -p",
+    "build:watch": "rimraf build && tsc -p tsconfig.build.json --watch",
+    "test": "cross-env NODE_ENV=test jest ./test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-typescript": "^7.12.17",
+    "@types/node": "^15.3.0",
+    "cross-env": "^7.0.3",
+    "prettier": "2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "4.1.5"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "commander": "^7.2.0"
+  }
+}

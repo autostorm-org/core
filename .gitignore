@@ -2,7 +2,7 @@ node_modules
 yarn-error.log
 ecosystem.config.js
 cache
-
+focus-output.log
 # Yarn 2.+
 .yarn/*
 !.yarn/patches

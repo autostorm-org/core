@@ -6,5 +6,6 @@ export {};
 declare global {
   interface Window {
     BinanceChain?: ethers.providers.Provider;
+    fetch: any;
   }
 }

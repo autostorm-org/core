@@ -1,6 +1,6 @@
 const path = require("path");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require("webpack-node-externals");
@@ -122,5 +122,6 @@ module.exports = {
   // Peer dependencies
   externals: {
     react: "react",
+    ["react-dom"]: "react-dom",
   },
 };

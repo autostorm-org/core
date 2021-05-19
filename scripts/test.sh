@@ -1,5 +1,7 @@
 cd ./packages
-cd ./autofica-abi && yarn test || exit $?
+cd ./autofica-deprem && yarn build || exit $?
+cd ../
+cd ./autofica-abi && yarn build:gen && yarn test || exit $?
 cd ../
 cd ./autofica-components && yarn test || exit $?
 cd ../

@@ -66,13 +66,10 @@
     /* Advanced Options */
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    // "preserveSymlinks": true,
+    "types": ["node", "jest"]
   },
   /*Additions*/
-  "exclude": [
-    "./MCL-SmartContracts",
-    "test",
-    "scripts",
-    "./src/gen-types/**/*.ts"
-  ]
+  "exclude": ["./MCL-SmartContracts", "scripts", "./src/gen-types/**/*.ts"]
 }

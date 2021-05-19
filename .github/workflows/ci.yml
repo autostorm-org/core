@@ -26,6 +26,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run tests # checkout rest
         shell: bash
+        env:
+          AUTOFICA_BSC_TEST_ACCOUNT_PRIVATE_KEY: ${{secrets.TEST_WALLET}}
         run: |
           # Replace ssh for https for actions
           git config --global url."https://github.com/".insteadOf "git@github.com:"

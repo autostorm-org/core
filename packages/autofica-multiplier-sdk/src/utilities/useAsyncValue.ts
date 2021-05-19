@@ -1,4 +1,5 @@
 import React from "react";
+import { IAsyncValue } from "../types";
 
 /**
  * @param promise The promise that will be resolved to an async value
@@ -6,11 +7,11 @@ import React from "react";
  * @param debug Debugging tag to troubleshoot if required
  * @returns An object of chape { value, error } where value is the last evaluated value of the promise. Error any error messages.
  */
-const useAsyncValue = <T extends unknown>(
+const useAsyncValue = <T>(
   promise?: () => Promise<T> | void,
   dependencies?: Array<unknown>,
   debug?: string
-): { value: T | null; error: unknown; evaluated: boolean } => {
+): IAsyncValue<T> => {
   // Keep state of the value and initialize to null
   const [value, setValue] = React.useState<T | null>(null);
   // Keep state of the errors and initialize to null

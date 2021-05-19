@@ -9,11 +9,12 @@ const MultiplierProvider = (
   props: React.PropsWithChildren<IMultiplierProviderProps>
 ) => {
   return (
+    // @ts-ignore
     <UseWalletProvider chainId={props.chainId}>
       {props.children}
     </UseWalletProvider>
   );
 };
 
-export default MultiplierProvider;
+export { MultiplierProvider };
 export type { IMultiplierProviderProps };

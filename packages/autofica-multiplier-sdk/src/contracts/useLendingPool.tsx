@@ -6,18 +6,20 @@ import { useLendingPoolAddressProvider } from "./useLendingPoolAddressProvider";
 import type { IMultiplierContract } from "../types";
 
 interface IUseLendingPool
-  extends IMultiplierContract<ReturnType<typeof LendingPool__factory.connect>> {
-  readonly contract?: ReturnType<typeof LendingPool__factory.connect>;
-  readonly connected: boolean;
-  readonly connecting: boolean;
-}
+  extends IMultiplierContract<
+    ReturnType<typeof LendingPool__factory.connect>
+  > {}
 
 const useLendingPool = (writable?: boolean): IUseLendingPool => {
   const wallet = useWallet();
   const lendingPoolAddressProviderContract = useLendingPoolAddressProvider();
   const lendingPoolAddressProviderResult = useAsyncValue(() => {
     return lendingPoolAddressProviderContract.contract?.getLendingPool();
-  }, [wallet.account, lendingPoolAddressProviderContract.contract != null]);
+  }, [
+    lendingPoolAddressProviderContract.account,
+    lendingPoolAddressProviderContract.connected,
+    lendingPoolAddressProviderContract.contract != null,
+  ]);
 
   if (
     wallet.provider == null ||
