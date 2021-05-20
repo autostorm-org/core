@@ -89,6 +89,7 @@ describe("useLendingPool Tests", () => {
       connectBtn?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
 
       // Wait for network requests to settle
+      await delay(2000);
       await waitFor(() => expect(successLog).toHaveBeenCalled());
       await wrapper.findByTestId("deposit-container");
 
@@ -97,7 +98,7 @@ describe("useLendingPool Tests", () => {
       depositBtn?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
       await wrapper.findByTestId("deposit-container");
 
-      await delay(20000);
+      await delay(15000);
 
       // Assert that deposit transaction was successfully sent.
 
