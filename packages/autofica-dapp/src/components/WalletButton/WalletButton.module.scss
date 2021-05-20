@@ -1,0 +1,21 @@
+@import "@autofica/components/lib/theme/constants.scss";
+
+.walletText {
+  display: none;
+  @media (min-width: $layout-desktop-min) {
+    display: inline;
+  }
+}
+.walletButtonIcon {
+  @media (min-width: $layout-desktop-min) {
+    margin-right: 10px;
+  }
+}
+
+.buttonOverride {
+  @media (max-width: $layout-tablet-max) {
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+  }
+}

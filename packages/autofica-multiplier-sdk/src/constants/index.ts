@@ -23,10 +23,12 @@ const ChainData = {
 const Contracts = {
   [SupportedNetworks.MAINNET]: {
     lendingPoolAddressProvider: "0xCc0479a98cC66E85806D0Cd7970d6e07f77Fd633",
+    BNB: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
   },
 
   [SupportedNetworks.TESTNET]: {
     lendingPoolAddressProvider: "0x78547CBf195Dc3D92C5847acD9E89aFB35430c0f",
+    BNB: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
   },
 };
 

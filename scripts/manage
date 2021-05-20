@@ -1,0 +1,155 @@
+#!/bin/bash
+source "${BASH_SOURCE%/*}/logger.sh" 
+START_DIR=$(pwd)
+# PACKAGES
+AFI_COMPONENTS=false
+AFI_ABI=false
+AFI_MULTIPLIER=false
+AFI_SILENT=false
+AFI_DEPREM=false
+# COMMANDS
+AFI_CMD_FOCUS=false
+AFI_CMD_BUILD=false
+AFO_CMD_TEST=false
+for i in "$@"
+do
+case $i in
+    build)
+    AFI_CMD_BUILD=true
+    ;;
+    focus)
+    AFI_CMD_FOCUS=true
+    ;;
+    -c|--components)
+    AFI_COMPONENTS=true
+    ;;
+    -a|--abi)
+    AFI_ABI=true
+    ;;
+    -m|--multiplier)
+    AFI_MULTIPLIER=true
+    ;;
+     -d|--deprem)
+    AFI_DEPREM=true
+    ;;
+    -s|--silent)
+    AFI_SILENT=true
+    ;;
+    *)
+    UNKNOWN="${i#*=}"
+    logWarn "Unknown flag ${UNKNOWN}"
+    ;;
+esac
+done
+
+if [ ${AFI_ABI} = false ] && [ ${AFI_MULTIPLIER} = false ] && [ ${AFI_COMPONENTS} = false ] ; then
+    logError "No known packages specified";
+    exit 1;
+fi
+
+if [ ${AFI_CMD_BUILD} = false ] && [ ${AFI_CMD_FOCUS} = false ] ; then
+    logError "No known commands specified";
+    exit 1;
+fi
+
+logInfo "Will work on known packages:"
+
+if [[ ${AFI_MULTIPLIER} = true ]] ; then
+    logInfo "-   @autofica/multiplier";
+    if [[ ${AFI_ABI} = false ]]; then
+        logWarn "This package depends on @autofica/abi, make sure its built anf focused.";
+    fi
+fi
+
+if [[ ${AFI_ABI} = true ]]; then
+    logInfo "-   @autofica/abi";
+fi
+
+if [[ ${AFI_COMPONENTS} = true ]] ; then
+    logInfo "-   @autofica/components";
+fi
+
+
+
+if [[ ${AFI_SILENT} = true ]] ; then
+    logWarn "Will output log to ${pwd}/focus-output.log";
+    touch "./focus-output.log"
+fi
+
+
+
+
+# Components takes precedence as it has no deps
+if [[ ${AFI_COMPONENTS} = true ]] ; then    
+    logInfo "BEGIN: @autofica/components";
+    
+    cd "${BASH_SOURCE%/*}/../packages/autofica-components";
+
+    if [[ ${AFI_CMD_BUILD} = true ]] ; then
+
+        logInfo "BUILDING STARTED: @autofica/components";
+        yarn install || exit $?;
+        yarn build || exit $?;
+        logInfo "BUILDING COMPLETED: @autofica/components";
+    fi
+
+    if [[ ${AFI_CMD_FOCUS} = true ]] ; then
+        logInfo "FOCUS STARTED: @autofica/components";
+        yarn workspaces focus @autofica/components --production || exit $?;
+        logInfo "FOCUS COMPLETED: @autofica/components";
+    fi
+    cd "${START_DIR}";
+    logInfo "DONE: @autofica/components";
+fi
+
+# ABI takes precedence as MULTIPLIER depends on it
+if [[ ${AFI_ABI} = true ]] ; then    
+    logInfo "BEGIN: @autofica/abi";
+    
+    cd "${BASH_SOURCE%/*}/../packages/autofica-abi";
+
+    if [[ ${AFI_CMD_BUILD} = true ]] ; then
+
+        logInfo "BUILDING STARTED: @autofica/abi";
+        yarn install || exit $?;
+        yarn build || exit $?;
+        logInfo "BUILDING COMPLETED: @autofica/abi";
+    fi
+
+    if [[ ${AFI_CMD_FOCUS} = true ]] ; then
+        logInfo "FOCUS STARTED: @autofica/abi";
+        yarn workspaces focus @autofica/abi --production || exit $?;
+        logInfo "FOCUS COMPLETED: @autofica/abi";
+    fi
+    cd "${START_DIR}";
+    logInfo "DONE: @autofica/abi";
+fi
+
+
+# ABI takes precedence as MULTIPLIER depends on it
+if [[ ${AFI_MULTIPLIER} = true ]] ; then    
+    logInfo "BEGIN: @autofica/multiplier-sdk";
+    
+    cd "${BASH_SOURCE%/*}/../packages/autofica-multiplier-sdk";
+
+    if [[ ${AFI_CMD_BUILD} = true ]] ; then
+
+        logInfo "BUILDING STARTED: @autofica/multiplier-sdk";
+        yarn install || exit $?;
+        yarn build || exit $?;
+        logInfo "BUILDING COMPLETED: @autofica/multiplier-sdk";
+    fi
+
+    if [[ ${AFI_CMD_FOCUS} = true ]] ; then
+        logInfo "FOCUS STARTED: @autofica/multiplier-sdk";
+        yarn workspaces focus @autofica/multiplier-sdk --production || exit $?;
+        logInfo "FOCUS COMPLETED: @autofica/multiplier-sdk";
+    fi
+    cd "${START_DIR}";
+    logInfo "DONE: @autofica/multiplier-sdk";
+fi
+
+logInfo "Exit without errors";
+
+
+

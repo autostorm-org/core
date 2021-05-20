@@ -1,0 +1,33 @@
+@import "@autofica/components/lib/theme/constants.scss";
+
+.optionText {
+  display: none;
+  @media (min-width: $layout-desktop-min) {
+    display: flex;
+    margin-left: 10px;
+  }
+}
+
+.logo {
+  background-color: var(--primary-main);
+}
+.templateOverride {
+  border-width: 0px;
+  height: 100vh;
+}
+
+.buttonContainer {
+  margin-right: 0.2rem;
+  order: 1;
+  @media (min-width: $layout-tablet-min) {
+    margin-bottom: 0.2rem;
+    margin-top: 30px;
+    margin-right: 0rem;
+    order: initial;
+  }
+
+  @media (min-width: $layout-desktop-min) {
+    margin-bottom: 30px;
+    order: initial;
+  }
+}

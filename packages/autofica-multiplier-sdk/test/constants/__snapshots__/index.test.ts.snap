@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Constants ChainData should match snapshots 1`] = `
+Object {
+  "56": Object {
+    "name": "BSC Mainnet",
+  },
+  "97": Object {
+    "name": "BSC Testnet",
+  },
+}
+`;
+
+exports[`Constants Contracts should match snapshots 1`] = `
+Object {
+  "56": Object {
+    "BNB": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "lendingPoolAddressProvider": "0xCc0479a98cC66E85806D0Cd7970d6e07f77Fd633",
+  },
+  "97": Object {
+    "BNB": "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    "lendingPoolAddressProvider": "0x78547CBf195Dc3D92C5847acD9E89aFB35430c0f",
+  },
+}
+`;
+
+exports[`Constants SupportedNetworks should match snapshots 1`] = `
+Object {
+  "56": "MAINNET",
+  "97": "TESTNET",
+  "MAINNET": 56,
+  "TESTNET": 97,
+}
+`;
+
+exports[`Constants WalletConnectionStates should match snapshots 1`] = `
+Object {
+  "0": "NOT_CONNECTED",
+  "1": "METAMASK_WALLET",
+  "2": "BSC_WALLET",
+  "3": "NO_WALLET_DETECTED",
+  "BSC_WALLET": 2,
+  "METAMASK_WALLET": 1,
+  "NOT_CONNECTED": 0,
+  "NO_WALLET_DETECTED": 3,
+}
+`;

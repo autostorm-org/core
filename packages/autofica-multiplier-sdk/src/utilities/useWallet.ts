@@ -17,16 +17,20 @@ export default function useWallet() {
   const chainId = parseChainId(wallet.chainId);
   const SelectedChainData = ChainData[chainId];
 
-  const provider = React.useMemo(
-    () =>
-      wallet.ethereum && wallet.chainId
-        ? new providers.Web3Provider(wallet.ethereum, {
-            name: SelectedChainData.name,
-            chainId: wallet.chainId,
-          })
-        : null,
-    [wallet.ethereum, wallet.chainId]
-  );
+  const provider = React.useMemo(() => {
+    if (wallet.ethereum && wallet.chainId) {
+      if (wallet.ethereum instanceof providers.JsonRpcProvider) {
+        return wallet.ethereum;
+      }
+
+      return new providers.Web3Provider(wallet.ethereum, {
+        name: SelectedChainData.name,
+        chainId: wallet.chainId,
+      });
+    }
+
+    return null;
+  }, [wallet.ethereum, wallet.chainId]);
 
   React.useEffect(() => {
     // connect errors
